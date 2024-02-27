@@ -1,0 +1,50 @@
+{% extends 'template.html'%}
+
+{% block content %}
+    <div class="flex-1 p-8 text-white relative">
+        
+        <div class="text-4xl font-extrabold mb-8">
+            <p>Books</p>
+        </div>
+        
+    </div>
+    <div class="flex justify-center items-center h-screen p-8 mt-auto -ml-10">
+        <div class="overflow-y-auto max-h-full grid grid-cols-2 gap-4">
+            <div class=" border rounded border-double border-yellow-200 border-4 bg-gray-800 text-white">
+                <div class="p-2">
+                    <h2 class="text-2xl font-bold mb-4">The Alchemist</h2>
+                    <div class="mb-2 items-center">
+                        <a href="https://www.goodreads.com/book/show/18144590-the-alchemist?ac=1&from_search=true&qid=qNsfliigvP&rank=1" target="_blank" rel="noopener noreferrer">
+                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-24 h-36" src="{{url_for('static', filename='images/Alchemist.jpg')}}" alt="The Alchemist">
+                        </a>
+                    </div>
+                    <p><strong>Author:</strong> <span class="text-zinc-400">Paulo Coelho</span></p>
+                    <p><strong>Published:</strong> <span class="text-zinc-400">1988</span></p>
+                    <p><strong>Rating:</strong> <span class="text-zinc-400">7/10</span></p>
+                    <p><strong>Short Explanation:</strong> <span class="text-zinc-400 text-sm text-wrap">I really enjoyed the message of this book. It is a message that I deeply resonate with and will continue to believe in: to follow your dreams. The short stories throughout the book were also awesome, specifically the Narcissus flower story and the story of keeping the oil on the spoon. These stories say so much with so little. I think I would have enjoyed this book more however if I could read it in its original language as I believe the translation threw the delivery of the story off. It oversimplified the language and made the storytelling seem too straightforward, it made the fantasy adventure feel more like a little stroll in the park. </span></p>
+
+                </div>
+            </div>
+            <div class=" border rounded border-double border-yellow-200 border-4 bg-gray-800 text-white">
+                <div class="p-2">
+                    <h2 class="text-2xl font-bold mb-4">Fourth Wing</h2>
+                    <div class="mb-2 items-center">
+                        <a href="https://www.goodreads.com/book/show/61431922-fourth-wing?from_search=true&from_srp=true&qid=dDXytnqc1a&rank=1" target="_blank" rel="noopener noreferrer">
+                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-24 h-36" src="{{url_for('static', filename='images/fourth_wing.jpeg')}}" alt="Fourth Wing">
+                        </a>
+                    </div>
+                    <p><strong>Author:</strong> <span class="text-zinc-400">Rebecca Yarros</span></p>
+                    <p><strong>Published:</strong> <span class="text-zinc-400">2023</span></p>
+                    <p><strong>Rating:</strong> <span class="text-zinc-400">...</span></p>
+                    <p><strong>Short Explanation:</strong> <span class="text-zinc-400 text-sm text-wrap">Currently Reading...</span></p>
+
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+{% endblock %}

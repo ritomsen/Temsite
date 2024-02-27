@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="flex align-center items-center h-screen p-8">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
+        <div class=" border rounded-lg border-green-500 border-4 bg-gray-800 text-gray-200">
+            <div class="p-2">
+                <embed src="{{url_for('static',filename='pdf/Literacy_Narrative.pdf' )}}" type="application/pdf" width="800" height="700">
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="/writing" class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mb-auto ml-auto mt-2 rounded-md hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+    <p class="text-white font-bold">Back</p>
+</a>
+                 
+{% endblock %}

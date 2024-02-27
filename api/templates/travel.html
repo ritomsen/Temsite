@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+
+
+{% block content %}
+<div class="flex-1 p-8 text-white relative">
+    <!-- Animated Text -->
+    <div class="text-4xl font-bold mb-8 absolute top-16">
+        <div id="animated-text" class="inline"></div>
+    </div>
+    
+</div>
+
+
+<script src="{{url_for('static', filename='js/travel.js')}}"></script>
+
+{% endblock %}
+   
+

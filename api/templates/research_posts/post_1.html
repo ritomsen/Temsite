@@ -1,0 +1,119 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="flex align-center items-center h-screen p-8">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
+        <div class=" border rounded-lg border-red-500 border-4 bg-gray-800 text-gray-200">
+            <div class="p-2">
+                <strong class="justify-center text-2xl text-blue-300">My simplified version of Automatic Music Playlist Generation via Simulation-based Reinforcement Learning by Spotify</strong><br>
+                <p class="text-lg">- Ritom Sen</p>
+                <p>
+                <br>
+                <span class="font-bold text-blue-300">Summary:</span><br>
+                <p class="ml-4">
+                    This paper is about how Spotify curates playlists for their users. Previously, playlists like these were created using concepts like sequence modeling or collaborative filtering, but these researchers try to use this concept called <span class="highlighted-word cursor-pointer text-red-300">Reinforcement Learning</span> in order to take account for acoustic coherence, listening session context, and optimal item sequences, which other recommender system methods don’t account for. It is also important to note that when listening to music, you sometimes listen to the same songs on repeat, so the trade-off between recommending new tracks and recommending tracks the user already knows is hard to balance, and this is what Reinforcement Learning is good at, which other concepts like collaborative filtering would not be good for. The problem is defined as a Markov Decision Process (new term learned!) where states encode context that summarize a user listening session, the action space is the space of all the possible playlists (which is gonna be really large lol) and the reward is the desired user satisfaction metric. When considering tracks for this problem, they choose the genre that the user prefers, and create a pool of candidates that were already attached to this genre, meaning that the dimensionality of the candidate pool is much smaller than the whole list of possible tracks. With this problem, they decided to create a user model to simulate user behavior in order to create a modified DQN agent (a DQN agent is a type of reinforcement learning agent where instead of having a table to that tells you the reward or q value given the action and state, it approximates the reward usually using a deep neural network. So in this case they are using the user model to approximate the reward here). The “modified” part here is that they made the agent such that it can calculate rewards for songs that it hasn’t seen in training. The researchers decided to model users based on preferred genres as well as other contextual features such as time of day or device type (for example, music patterns when you gym in the morning listening from your phone is different than when listening on your computer before sleep doing homework). 
+                </p>
+                <br>
+                <span class="font-bold text-blue-300">World/Environment with User Model:</span><br>
+                <p class="ml-4">
+                    The environment in this RL framework is created by using a “world model” that mimics the user behavior in response to picking a certain track to listen to at a certain point in the listening session. The environment is essentially a transition function T : State × Action → New State and a reward function R : State × Action → Reward. The agent then learns a policy that selects actions (picks songs) in the environment based on the current state of the environment, 𝜋 : State → Next Action. <span class="bg-red-700">So in simpler terms: There’s going to be this “agent” that is going to pick the next song to add to the playlist from a candidate pool of songs, and based on this, contextual information of the user, and info of the previous tracks picked, the user model in the environment is going to output some predicted user response, like skipping the song or listening to it. This is going to be translated to some reward which, whether good or bad, is then in turn going to be used to update the way the agent picks songs.</span> To clarify, the World model is different than the User model, the World model starts the session, keeps track of the recommended tracks, uses the user model to find the reward, and then ends the session when it needs to terminate. So the world model is in charge of simulating a user session to train the agent, and the effectiveness of this is very dependent on how similar the user model is at depicting an actual person’s response. 
+                </p>
+                <div id="dialogBox" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 max-w-md flex justify-center items-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+                    <div class=" bg-white p-4 shadow-lg border border-8 border-red-500 rounded-lg">
+                        <p class="text-black" id="definition"> a framework for solving decision problems by building agents that trial and error against an environment and learn based on positive or negative rewards</p>
+                        <button id="closeButton" class="mt-4 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">Close</button>
+                    </div>
+                </div>
+                <br>
+                <span class="font-bold text-blue-300">User Model:</span>
+                <p class="ml-4">
+                    Once again the user model is created to mimic how a user would react to a song and return a user response (reward). They train this user model using historical data of user listening sessions. More specifically, they took the previous listening session data, randomly shuffled the songs in some of them, and took note of the user response to each track, such as the percentage of the track completed by the user and the position of the track within the listening session. Additionally, they added user information (user interest/past interaction with Spotify), and content information (information related to the music the user interacts with). Once again, the user model outputs the reward for a given action at a given state. Spotify chose to make two different user models: sequential and non-sequential.  
+                    <br>
+                    <span class="font-bold">The Sequential User model (They called it SWM)</span><br>
+                        <p class="ml-8">
+                        - sequence of LSTM cells → order of tracks matter, uses previous response in order to predict new response (auto-regressive, another new word unlocked 🙃) <br>
+                        - 3 layer model (500,200,200) LSTM units <br>
+                        - more accurate than CWM, but harder to train agent with intrinsically higher stochasticity, so not as beneficial in practice <br>
+                        </p>
+                    <span class="font-bold ml-4">Non Sequential Model (They called it CWM)</span><br>
+                        <p class="ml-8">
+                        - dense layers <br>
+                        - input: features that summarize the track and the user, but no session info <br>
+                        </p>
+                            <p class = "ml-12">
+                            - So sequence of tracks DO NOT MATTER <br>
+                            </p>
+                        <p class="ml-8">
+                        - simple and faster, good for agent training <br>
+                        - computes theoretical max user reward for each track given the context (because the order doesn’t matter) <br>
+                        </p>
+                </p>
+                <br>
+                <span class="font-bold text-blue-300">CWM-GMPC:</span>
+                <p class="ml-4">
+                    Something interesting to note is that the user model can be used directly to pick the songs to add to the playlist, rather than using the model to train an agent that learns to pick the songs. So Spotify chose to use a greedy ranking algorithm called GMPC, which ranks and picks the songs based on the results from the user model CWM (used CWM, not SWM because CWM is more efficient to train). These predictions are a strong baseline for agent policies. It is also important to know that the optimal policy for the agent if it is being trained with CWM is in fact CWM-GMPC, since order doesn’t matter for the CWM model. 
+                </p>
+                <br>
+
+                <span class="font-bold text-blue-300">Action Head DQN Agent:</span>
+                <p class="ml-4">
+                As I mentioned before, because of certain constraints (most important being that the candidate pool for the playlist is constantly changing as the agent has to generalize its strategy across several candidate pools) Spotify created a modified Deep Q Network. They called this the Action Head DQN or AH-DQN. This takes as input the current state AS WELL AS the list of feasible actions that the agent can take. The Q network in this case will produce a q value (reward) for each possible action in the list and pick the one with the highest value, or in this case pick the song that has the highest user satisfaction. The downside of this modified DQN is that now it will have to make a forward pass through the Q network for each possible action, but the candidate pool is small comparatively and the forward passes can be parallelized. 
+                </p>
+                <br>
+
+                <span class="font-bold text-blue-300">Experiments/Results:</span>
+                <p class="ml-4">
+                Spotify decided to conduct 2 different types of experiments with this idea. 1) testing on the public streaming dataset of user listening sessions that Spotify has released, and 2) using new online data. 
+                </p>
+                <span class="font-bold ml-8">Public Streaming Dataset:</span>
+                <p class="ml-12">
+                This dataset includes 160 million music listening sessions, and Spotify decided to use this to evaluate their proposed model-based RL formulation. Evidently this testing is done in the offline setting. For this trial, they created their user model to output the probability that the user would skip a song at three time points, r1 r2 r3, given the user context and the sequence of tracks before it. Next, they sampled listening sessions of length 20 from the data, picking the first 5 as already observed tracks, and then using the rest of the 15 as possible recommended tracks. So essentially they were seeing if their model could sort the tracks in the listening session in an optimal way, and so the agent was being trained to pick tracks with a low likelihood of being skipped. The baselines that they used to compare with their AH-DQN was 1) Randomly Picking Songs 2) CWM-GMPC. Also, they decided to use their Sequential User model (SWM) to evaluate the listening sessions that these methods outputted, or in other words calculate the total reward from the songs in the order produced. From this test, CWM-GMPC performed best but not by too much, and action head was still better than random shuffle, so this shows the AH-DQN did learn something from the training. 
+                </p>
+                
+                <span class="font-bold ml-8">Online Experiments:</span>
+                <p class="ml-12">
+                For their online experiments, they trained their CWM to output the listening duration of the track, including if they completed or skipped the track. In this test they used real users, specifically 2 million users, interacting with 2.8 million unique tracks across 4 million distinct sessions. The way it worked was they trained their agent offline using CWM, deployed it online, then had the user pick a playlist backed by a predefined track pool, then had the system respond with an ordered list of tracks less than that of the pool. They split the users into 5 groups, Control (the previous model they used for playlist generation), Random shuffle, Cosine Similarity (sorts tracks based on cosine similarity between user and track embeddings), CWM-GMPC, and obviously the AH-DQN they made. Results? They found that the random shuffle performed the worst, the Cosine Similarity was next. Most importantly though, they found that the AH-DQN and CWM-GMPC performances were essentially indistinguishable and also found that these were statistically indistinguishable from the control as well.  
+                </p><br>
+                <span class="font-bold text-blue-300">Conclusion:</span> 
+                <p class="ml-4">
+                One of their main goals with their work was to create an environment where they could train, experiment, and evaluate the agent without using actual users and having to expose them to sub-optimal recommendations. With their learned world model that simulates user responses, they were able to train and evaluate agents offline, so this goal was accomplished! Additionally, they showed that this way of using reinforcement learning for playlist generation was feasible and was just as good as the current model they had deployed already. The article mentioned that in the future, it would be interesting to use the sequential model (SWM) to train the agent; the expectation is that this would improve the performance of the agent even more, but they have to be weary about sacrificing usability with this. In any way, if they can improve the user model, this will lead to increased performance by the agent, as if they can mimic a user as close as possible to a real user, then they can better train agents against this!
+                </p>
+            </div>
+            
+        </div>
+        
+        
+        
+        
+    </div>
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var highlightedWords = document.querySelectorAll('.highlighted-word');
+        var dialogBox = document.getElementById('dialogBox');
+        var definition = document.getElementById('definition');
+    
+        highlightedWords.forEach(function(word) {
+            word.addEventListener('click', function() {
+                // Replace the definition with the actual definition of the word
+                definition.textContent = word.textContent + ":" +definition.textContent;
+    
+                // Show the dialog box
+                dialogBox.classList.add('opacity-100');
+                dialogBox.classList.remove('pointer-events-none');
+            });
+        });
+    
+        document.getElementById('closeButton').addEventListener('click', function() {
+            // Hide the dialog box
+            dialogBox.classList.remove('opacity-100');
+            dialogBox.classList.add('pointer-events-none');
+        });
+    });
+</script>
+<a href="/research" class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mb-auto ml-auto mt-2 rounded-md hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+    <p class="text-white font-bold">Back</p>
+</a>
+{% endblock %}

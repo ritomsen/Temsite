@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename='css/output.css')}}" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+</head>
+<body class="bg-gradient-to-r from-black to-red-700 flex">
+    <!-- Sidebar -->
+
+    <nav class="bg-gray-800 text-white p-4 min-h-screen">
+        <div class="flex flex-col space-y-7 mb-4 items-center">
+            <!-- Circular Image Link to About Page -->
+            <a href="/about">
+                <img src="{{url_for('static', filename='images/Headshot.jpeg')}}" alt="Profile" class="rounded-full h-24 w-24 mr-2 mb-2 hover:border-8 hover:border-red-700">
+            </a>
+            <!-- Tailwind CSS Classes for Sidebar Links -->
+            <a href="{{url_for('index')}}" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Home</p>
+                <!-- <img src="{{url_for('static', filename='images/home.png')}}" alt="house_pic" class="h-12 w-12"> -->
+            </a>
+            <a href="/books" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Books</p>
+            </a>
+            <a href="/music" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Music</p>
+            </a>
+            <a href="/projects" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Projects</p>
+            </a>
+            <a href="/research" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Research</p>
+                <p class="text-center">Summaries</p>
+            </a>
+            <a href="/travel" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Travel</p>
+            </a>
+            <a href="/writing" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
+                <p class="text-center">Writing</p>
+            </a>
+            
+        </div>
+        <div class="flex items-center space-x-4 ml-1 mt-7">
+            <a href="https://www.linkedin.com/in/ritom-sen/" target="_blank" rel="noopener noreferrer">
+                <img src="{{url_for('static', filename='images/linkedin_logo.png')}}" alt="LinkedIn" class="h-7 w-7">
+            </a>
+            <a href="https://github.com/ritomsen" target="_blank" rel="noopener noreferrer">
+                <img src="{{url_for('static', filename='images/github.png')}}" alt="Github" class="h-7 w-7">
+            </a>
+            <a href="https://www.chess.com/member/temtime9" target="_blank" rel="noopener noreferrer">
+                <img src="{{url_for('static', filename='images/chess.jpeg')}}" alt="chess.com" class="h-7 w-7">
+            </a>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+
+    <footer class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mt-auto ml-auto">
+        <p class="text-sm">© Ritom Sen 2024</p>
+        <p class="text-sm">ritomsen@umich.edu</p>
+        <p class="text-sm">+1 (734)-864-6254</p>
+    </footer>
+
+</body>
+
+</html>

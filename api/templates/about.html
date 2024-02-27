@@ -1,0 +1,93 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="flex-1 p-8 text-white relative">
+    
+    <div class="text-4xl font-extrabold mb-8">
+        <p>About Me</p>
+    </div>
+    <div class="text-white text-lg">
+        More profesionally....
+    </div>
+</div>
+<div class="flex align-center items-center h-screen p-8 h-1/4 w-3/5">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Capital One TIP Internship<br>Summer 2023</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">I interned at Capital One apart of their Technology Internship Program (software engineering internship) my sophomore summer in Mclean, VA. I was able to work with a wonderful team full of interns from colleges across the country. We were given a problem from our manager and sought a way to fix it. The problem: data stewards at the company were overwhelmed and it was hard for them to learn what they had to do. We interviewed employees at the company, garnered feedback, and designed a solution for this. We created a slack app/bot using basic NLP and ML techniques and leveraged internal API's within Capital One to help automate tasks for these data stewards; additionally, our product helped provide them resources to help with onboarding. We again met with data stewards to further refine our product and by the end of the summer we were able to present our project in front of Directors and even VPs at the company. This first started my interest in ML and since I have taken Intro to ML at my school as well as joined the Michigan Data Science Team so I can work on more ML projects. I learned a lot throughout this internship, specifically pertaining the workflow of a software engineer, but my favorite part of this internship was exploring the DC area and making lifelong relationships with my intern class. </span></p>
+                <div class=" mt-4 p-4 grid grid-cols-1 gap-4">
+                    <img src="{{url_for('static', filename='images/cap_one_team.jpg')}}" alt='Cap One Team Pic' class="border rounded border-dashed border-violet-400 border-4">
+                </div>
+            </div>
+        </div> 
+        
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">JBR Sports Org LLC<br>2021-2023</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">I grew up playing soccer competitivley since I was 3, and also loved playing basketball with my friends. So with this passion for sports, two friends and I started a "luxury" recreational sports company when I was in high school, and continued this in college. The idea was that we wanted to make rec sports more fun, more interesting, and more youthful; we wanted to create a vibe more in tune with the late teen early 20s demographic. For example, in our main basketball league, the "JBR Champions League", we garnered over 150 participants with our new game format, weekly writeups full of jokes, predictions, and recaps, an All Star Game with cash prizes including a 3pt contest and dunk contest, a huge trophy, and weekly professionally curated mixtapes of our games. We have hosted tournaments and leagues for basketball, volleyball, and even NBA 2K; plus we have sponsored athletes in the past, gotten sponsored by companies, and hosted a tournament all the way in Florida (we all live in Michigan)! My favorite JBR event was when we partnered up with the Saline Fair during Summer 2022 to host Kids Day and raise money for Saline Area Social Services; we set up some sports for the kids and also acquired a bouncy house and a dunk tank that we took turns in. Our most recent tournament was Fall 2022 where we hosted a frat basketball tournament with 10 different social frats across Umich. Since then we have all been super busy with school and our lives but hopefully one day we can bring JBR back!</span></p>
+                <a class = "text-blue-300" href="https://thesalinepost.com/g/saline-mi/n/37537/jbr-sports-llc-and-champions-league" alt="Saline Post Article">Saline Post Article</a><br>
+                <a class="text-blue-300" href="https://voyagemichigan.com/interview/hidden-gems-meet-josh-ben-ritom-finn-stack-sen-of-jbr-sports/" alt="Hidden Gems Article">Hidden Gems Article</a>
+                <div class=" mt-4 p-4 grid grid-cols-2 gap-4">
+                    <img src="{{url_for('static', filename='images/JBR1.jpg')}}" alt='JBR pic1' class="border rounded border-dashed border-violet-400 border-4">
+                    <img src="{{url_for('static', filename='images/JBR2.jpg')}}" alt='JBR pic2' class="border rounded border-dashed border-violet-400 border-4">
+                </div>
+            </div>
+        </div> 
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Piano<br>Since I was 3</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">I played piano since the age of 3. I grew up doing piano competitions and loving the rush of winning trophies. It wasn't until junior year of high school though did I fall in love with the instrument itself; this was a result of me discovering the music of Frédéric Chopin. His music hit a spot in my heart and I couldn't stop learning/playing his songs. Right before I came to college, I wanted to record a studio album of my favorite Chopin Pieces. Here is me playing his Nocturne in C# Minor and Nocturne in C minor.</span></p>
+                <div class="mt-4 p-4 mx-auto grid grid-cols-1 gap-4 text-white">
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1783467666%3Fsecret_token%3Ds-52u5pRqYbp7&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · <a href="https://soundcloud.com/ritom-sen/sets/some-piano-songs/s-52u5pRqYbp7" title="some piano songs" target="_blank" style="color: #cccccc; text-decoration: none;">some piano songs</a></div>                    
+                </div>
+            </div>
+        </div>  
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Surveys of Consumers<br>2022-2023</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">For about a year and a half, I worked as a student clerk/coder at the Surveys of Consumers within the Institute of Social Research at the University of Michigan. The Surveys of Consumers is a monthly survey that uses it's results to gauge economic sentiment in the country. I was in charge of helping with the transition of going from phone surveys to web surveys, as well as many administrative tasks. Just from doing my job, I was able to read how people from around the country percieve the current state of the economy, and I was fascinated by the variance and similarities in these responses. The team at the Surveys of Consumers is so awesome, and I was able to work with super kind and smart people while I worked there.</span></p>
+                <a class="text-blue-300" href="http://www.sca.isr.umich.edu/" >Surveys of Consumers Website</a>
+            </div>
+        </div> 
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Alpha Kappa Psi - Phi Chapter<br>2021-Present</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">Alpha Kappa Psi is a business fraternity and I joined the Umich chapter in my second semester freshman year. Now, I haven't held any board positions for the org (although I have helped with several comittees within the org), but I wanted to include this here because of how important this organization has been to my personal and professional development. There are so many incredible, intelligent, and interesting people in this org and just from hanging out with them I have learned so much. I have really been able to refine what I want to do professionally because of AKPsi, and have gotten so much help with my resume, interview skills, and overall industry knowledge. I think more importantly, because of this org, I am constantly surrounded by people doing crazy awesome things, whether it is starting their own startups, traveling around the world, or just simply following their passions, and it really motivates me to follow suit, or do my best to try to. Lastly, the community and friends this org has brought me is priceless, and I am so grateful to have joined!</span></p>
+                <div class=" mt-4 p-4 grid grid-cols-2 gap-4">
+                    <img src="{{url_for('static', filename='images/akpsi1.jpg')}}" alt='akpsi pic1' class="border rounded border-dashed border-violet-400 border-4">
+                    <img src="{{url_for('static', filename='images/akpsi2.jpg')}}" alt='akpsi pic2' class="border rounded border-dashed border-violet-400 border-4">
+                </div>
+            </div>
+        </div> 
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Intus Care<br>Summer 2020</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">Intus Care is a health care analytics platform startup whose cofounder happened to have went to my high school. Back when they were super small, I was able to do some research within the long term health care space, and wrote reports to further refine their healthcare analytics platform. Since then, Intus Care has expanded, opening offices in New York, and raising a Series A.</span></p>
+                <a class="text-blue-300" href="https://www.intuscare.com/" >Intus Care Website</a>
+            </div>
+        </div> 
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Huron Valley PACE<br>Summer 2020</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">Huron Valley Pace is an all inclusive health care place for the elderly. I volunteered here actually to teach  the employees basic and intermediate excel skills. I previously got Microsoft certified in Excel and Powerpoint, and also competed in excel competitions through Business Professionals of America, where I won 6th place at Nationals. I took up this opportunity as I thought it would be a good way to apply my excel knowledge, and was intruiged by the opportunity to learn how to teach and create my own course. After teaching weekly classes throughout the summer, I recieved lots of postitive feedback from the employees and also felt very personally accomplished. All my students were evidently older than me, so this was an interesting experience, but I really matured a lot, and was proud of myself for being able to stand up in front of a ton of educated adults and teach them the intracies of Excel! </span></p>
+            </div>
+        </div> 
+        <div class=" border rounded-lg border-orange-500 border-4 bg-gray-800 text-white">
+            <div class="p-2">
+                <h2 class="text-2xl font-bold mb-4">Students Against Racism<br>2020-2021</h2>
+                <p><strong>Description:</strong> <span class="text-zinc-300 text-sm text-wrap">I went to a predominatley white high school, where microagressions and implicit biases were explicitly apparent. Specifically, during my Junior year, my school made national news twice for racist events. Now, I had certainly felt some level of racism throughout my time at Saline, but at this point I had felt enough was enough: I had to do something. With the help of 3 of my friends and my very knowledgeable AP Chem teacher, we started Students Against Racism. Our plan was to educate the youth in our school district about implicit biases and diverse perspectives so that the future of this school district would be in better hands. We spent hours as a club educating ourselves, and once we felt comfortable, we would create lesson plans and go into (or zoom into) elementary school classrooms to educate them. Additonally, we helped setup the diveristy hub in our high school, as well as create a mental health room in accordance with the Student Board for Diversity and Inclusion. This experience was pivotal as it showed me the power of standing up for what you believe in, and showed me how important taking that first step is in making a larger change. Additionally, I learned a lot from my AP Chem teacher who mentored us as we started this club, specifically about how to better keep an open mind. I am happy to say that this club is still running back in Saline as well!</span></p>
+                <div class=" mt-4 p-4 grid grid-cols-1 gap-4">
+                    <img src="{{url_for('static', filename='images/sar.jpg')}}" alt='sar pic' class="border rounded border-dashed border-violet-400 border-4">
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+
+    
+
+{% endblock %}
+
+
+
