@@ -1,4 +1,4 @@
-## TEMSITE AKA My Personal Website
+# TEMSITE AKA My Personal Website
 
 # Technologies
 Flask
