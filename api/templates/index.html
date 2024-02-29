@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Main Content -->
-<div>
+<div class="flex grid grid-cols-1 gap-4">
     <div class="flex-1 p-8 text-white relative z-0">
         <!-- Animated Text -->
         <div class="lg:text-4xl text-2xl font-bold mb-8 absolute top-16">
@@ -12,7 +12,7 @@
         
     </div>
     <!-- Main Text -->
-    <div class=" flex flex-shrink absolute top-32 p-6 items-center z-0">
+    <div class=" flex flex-shrink p-6 mt-8 items-center z-0">
         <div class="bg-gray-800 mr-auto p-2 border rounded border-dashed border-violet-400 border-4">
             <h1 class=" font-bold lg:text-lg text-sm md:text-base bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-400 text-transparent">
                 <p><span class="text-white">School:</span> University of Michigan-Ann Arbor <span class="text-white"> 〽️ </span></p>
@@ -28,7 +28,7 @@
 
     </div>
     <!-- Pictures at Bottom -->
-    <hr class="mt-96 border-t border-white">
+    <hr class= "border-t border-white">
     <div class=" mt-4 p-4 grid lg:grid-cols-4 grid-cols-2  gap-4">
         <img src="{{url_for('static', filename='images/chess_game.jpeg')}}" alt='funny_pic' class="border rounded border-dashed border-violet-400 border-4">
         <img src="{{url_for('static', filename='images/soccer.jpeg')}}" alt='soccer' class="border rounded border-dashed border-violet-400 border-4">
