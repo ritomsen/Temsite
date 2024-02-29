@@ -18,9 +18,8 @@
 </div>
 <div class=" sm:hidden flex align-center items-center h-screen p-8 max-h-full max-w-full ">
     <div class="max-h-full grid grid-cols-1 gap-4 ">
-        <div class=" border rounded-lg border-green-500 border-4">
-            <embed src="{{url_for('static',filename='pdf/TPAB.pdf' )}}" type="application/pdf" height=2000 width=275 >
-        </div>
+        <p class="text-white">One more step, click below to read!</p>
+        <a href="{{url_for('static', filename='pdf/TPAB.pdf')}}"" target="_blank" class = "text-blue-300">Click to Open PDF</a>
     </div>
 </div>
 <a href="/writing" class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mb-auto mr-2 ml-auto mt-2  rounded-md hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
