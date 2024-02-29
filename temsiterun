@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# temsiterun
+#
+# List files and folders, followed by a count
+
+# Stop on errors, print commands
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+# set -Eeuo pipefail
+# set -x
+
+
+
+npx tailwindcss -i ./api/static/css/main.css -o ./api/static/css/output.css
+
+flask --app api/index --debug run --host 0.0.0.0 --port 8000

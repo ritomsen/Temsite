@@ -1,11 +1,11 @@
 {% extends 'template.html' %}
 
 {% block content %}
-<div class="flex align-center items-center h-screen p-8">
+<div class="flex align-center items-center h-screen p-8 h-1/4 w-4/5">
     <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
         <div class=" border rounded-lg border-green-500 border-4 bg-gray-800 text-gray-200">
             <div class="p-2">
-                <embed src="{{url_for('static',filename='pdf/TPAB.pdf' )}}" type="application/pdf" width="800" height="700">
+                <embed src="{{url_for('static',filename='pdf/TPAB.pdf' )}}" type="application/pdf" height=700 width=1200 >
             </div>
         </div>
     </div>
