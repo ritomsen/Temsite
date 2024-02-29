@@ -67,7 +67,7 @@
             
         </div>
         <div id="navLinks" class="hidden fixed top-0 left-0 w-full h-full z-20 bg-white bg-opacity-75 flex items-center justify-center">
-            <div class="bg-gray-800 p-4 rounded-lg grid grid-cols-2 gap-2 items-center justify-center ">
+            <div class="bg-gray-800 p-4 rounded-lg grid grid-cols-2 gap-2 items-center justify-center text-white ">
                 <!-- Your navigation links -->
                 <a href="{{url_for('index')}}" class="block py-2 px-4 mb-2 my-2 inline-block rounded bg-gray-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
                     <p class="text-center">Home</p>
@@ -105,6 +105,11 @@
                     <a href="https://www.chess.com/member/temtime9" target="_blank" rel="noopener noreferrer">
                         <img src="{{url_for('static', filename='images/chess.jpeg')}}" alt="chess.com" class="h-7 w-7">
                     </a>
+                    
+                </div>
+                <div class="grid grid-rows-2 gap-2 text-white">
+                    <p class="text-xs">ritomsen@umich.edu</p>
+                    <p class="text-xs">(734) 864-6254</p>
                 </div>
                 <!-- Add more links as needed -->
             </div>
@@ -113,7 +118,7 @@
     </nav>
     {% block content %}{% endblock %}
 
-    <footer class="hidden lg:block lg:relative lg:flex lg:flex-col lg:bg-gray-800 lg:text-gray-500 lg:text-center lg:p-4 lg:mt-auto lg:ml-auto ">
+    <footer class=" hidden lg:block lg:relative lg:flex lg:flex-col lg:bg-gray-800 lg:text-gray-500 lg:text-center lg:p-4 lg:mt-auto lg:ml-auto ">
         <p class="text-xs ">© Ritom Sen 2024</p>
         <p class="text-xs">ritomsen@umich.edu</p>
         <p class="text-xs">+1 (734)-864-6254</p>
