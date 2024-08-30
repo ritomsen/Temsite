@@ -43,7 +43,7 @@ def show_books():
     return flask.render_template("books.html")
 
 @app.route('/research', endpoint='research')
-def show_index():
+def show_research():
     """Research page.
 
     Returns:
@@ -53,7 +53,7 @@ def show_index():
     return flask.render_template("research.html")
 
 @app.route('/travel', endpoint='travel')
-def show_index():
+def show_travel():
     """travel page.
 
     Returns:
@@ -63,7 +63,7 @@ def show_index():
     return flask.render_template("travel.html")
 
 @app.route('/writing', endpoint='writing')
-def show_index():
+def show_writing():
     """writing page.
 
     Returns:
@@ -73,7 +73,7 @@ def show_index():
     return flask.render_template("writing.html")
 
 @app.route('/projects', endpoint='projects')
-def show_index():
+def show_projects():
     """projects page.
 
     Returns:
@@ -89,3 +89,7 @@ def research_post(postid):
 @app.route('/writing/<postid>/', methods=['GET'])
 def writing_post(postid):
     return flask.render_template(f"writing_posts/post_{postid}.html")
+
+@app.route('/resume', methods=['GET'], endpoint='resume')
+def show_resume():
+    return flask.render_template("resume.html")
