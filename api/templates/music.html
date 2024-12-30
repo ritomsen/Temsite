@@ -1,76 +1,165 @@
-{% extends 'template.html'%}
+{% extends "template.html" %}
 
 {% block content %}
-<div class="grid grid-cols-1 max-h-full max-w-full gap-4">
+<div class="grid grid-cols-1 gap-4 max-h-full max-w-full">
+    <!-- Hero / Title Section -->
     <div class="flex-1 p-8 text-white relative">
-        <div class="text-4xl font-extrabold ">
-            <p>Music</p>
+        <div class="text-4xl font-extrabold">
+            <p>Music 🎵</p>
         </div>
-    </div>
-    
-    <div class="flex p-8 mx-auto lg:mb-auto lg:absolute lg:top-48 ">
-        <div class="grid grd-cols-1 lg:grid-cols-4 gap-4 items-center">
-            <div class=" border rounded border-violet-500 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4"><span class="text-cyan-500">Current</span> Favorite Song</h2>
-                    <div class="mb-2">
-                        <a href="https://open.spotify.com/track/63x6R9z0ioYFf1vDfVIhya?si=68baa1c7c7ff499a" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-28 h-28" src="{{url_for('static', filename='images/kenny.jpg')}}" alt="kenny">
-                        </a>
-                    </div>
-                    <p><strong>Title:</strong> <span class="text-zinc-400">Get an Idea</span></p>
-                    <p><strong>Artist:</strong> <span class="text-zinc-400">Kenny Mason</span></p>
-                    <p><strong>Album:</strong> <span class="text-zinc-400">PUP PACK EP</span></p>
-                </div>
-                
-            </div>
-            <div class=" border rounded border-violet-500 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4"><span class="text-cyan-500">Current</span> Favorite Album</h2>
-                    <div class="mb-2">
-                        <a href="https://open.spotify.com/album/367frJ4GG9UMlXlMrVanYL?si=6DGO3li0QfOhHuNANWDlVg" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-28 h-28" src="{{url_for('static', filename='images/forward.jpeg')}}" alt="forward">
-                        </a>
-                    </div>
-                    <p><strong>Title:</strong> <span class="text-zinc-400">FORWARD</span></p>
-                    <p><strong>Artist:</strong> <span class="text-zinc-400">Jordan Ward</span></p>
-                    <p><strong>Length:</strong> <span class="text-zinc-400">14 songs, 30 min 44 sec</span></p>
-                </div>
-                
-            </div>
-            <div class=" border rounded border-red-500 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4"><span class="text-red-700">All-Time</span> Favorite Artist</h2>
-                    <div class="mb-2">
-                        <a href="https://open.spotify.com/artist/6aaMZ3fcfLv4tEbmY7bjRM?si=Ltow6HyaSkK5uIdFaxuopw" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-28 h-28" src="{{url_for('static', filename='images/zay.jpeg')}}" alt="zay">
-                        </a>
-                    </div>
-                    <p><strong>Artist:</strong> <span class="text-zinc-400">Isaiah Rashad</span></p>
-                    <p><strong>Genre:</strong> <span class="text-zinc-400">Soul Rap Vibes</span></p>
-                    <p><strong>Why:</strong> <span class="text-zinc-400">you just gotta listen to him tbh</span></p>
-                </div>
-                
-            </div>
-            <div class=" border rounded border-red-500 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4"><span class="text-red-700">All-Time</span> Favorite Album</h2>
-                    <div class="mb-2">
-                        <a href="https://open.spotify.com/album/6jjX8mGrsWtrpYpFhGMrg1" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-28 h-28" src="{{url_for('static', filename='images/suns_tirade.jpeg')}}" alt="zay">
-                        </a>
-                    </div>
-                    <p><strong>Title:</strong> <span class="text-zinc-400">The Suns Tirade</span></p>
-                    <p><strong>Artist:</strong> <span class="text-zinc-400">Isaiah Rashad</span></p>
-                    <p><strong>Length:</strong> <span class="text-zinc-400">17 songs, 1 hr 3 min</span></p>
-                </div>
-            </div>
-        </div>
-        
     </div>
 
+    <!-- Grid Section (Simplified) -->
+    <div class="p-8 -mt-16 mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-y-auto max-h-full">
+            
+            <!-- Post #1 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/1">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">sleep</h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            A trio written for violin, piano, and saxophone. 
+                            It was inspired by my frustration and lack of sleep at the time 🥲.
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #2 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/2">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        i was in a rush
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            Final project for my music production class
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #3 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/3">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        lot of synths
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            Electronic music, completely made with field recordings.
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #4 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/4">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        Waltz No. 1
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            A quick solo Piano waltz.
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #5 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/5">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        JFK
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            Electronic music, made with just 3 random samples. JFK speech, bell tower, and phone ringtone.
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #6 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/6">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        Fantasia No. 1
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Wrote:</strong>
+                        <span class="text-zinc-400">2024</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            A solo violin piece.
+                        </span>
+                    </p>
+                </div>
+            </a>
+
+            <!-- Post #7 -->
+            <a class="border rounded-lg border-violet-500 border-4 bg-gray-800 text-white 
+                       hover:border-8 hover:border-red-700" 
+               href="/music/7">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">
+                        some piano songs
+                    </h2>
+                    <p class="text-sm lg:text-base">
+                        <strong>Year Performed:</strong>
+                        <span class="text-zinc-400">2021</span>
+                    </p>
+                    <p class="text-sm lg:text-base">
+                        <strong>Description:</strong>
+                        <span class="text-zinc-400">
+                            A performance of my favorite Chopin pieces.
+                        </span>
+                    </p>
+                </div>
+            </a>
+            
+        </div>
+    </div>
 </div>
-
 {% endblock %}
-
-

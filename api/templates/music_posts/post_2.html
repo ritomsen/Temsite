@@ -1,0 +1,122 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<!-- 
+  For extra-large screens (xl):
+  - Thicker border (border-4)
+  - Provide a title, description, and the SoundCloud embed
+-->
+<div class="hidden xl:flex items-center justify-center h-screen p-8 max-h-full max-w-full">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 p-4 border-4 border-violet-500 rounded-lg w-full lg:w-3/4 bg-gray-800">
+        <!-- SoundCloud Embed -->
+        <iframe 
+            width="100%" 
+            height="200" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996247603&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; 
+                    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · 
+            <a href="https://soundcloud.com/ritom-sen/i-was-in-a-rush" title="i was in a rush" target="_blank" style="color: #cccccc; text-decoration: none;">i was in a rush</a>
+        </div>
+        <!-- Title & Description -->
+        <div>
+            <h1 class="text-3xl font-extrabold text-white mb-2">i was in a rush</h1>
+            <p class="text-gray-300">
+                This was my final project for my music production class. 
+                I procrastinated so ended up creating, mixing, and mastering this in 1.5 days.
+                I had a tough semester and wanted to display this in the song 🤯. 
+                Wish I had more time to mix it better lol. Don't know how to describe this really.
+            </p>
+        </div>
+
+        
+
+    </div>
+</div>
+
+<!-- 
+  For medium to large screens (sm -> lg):
+  - Thicker border (border-4)
+-->
+<div class="hidden xl:hidden sm:flex items-center justify-center h-screen p-8 max-h-full max-w-full ">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 p-4 border-4 border-violet-500 rounded-lg w-full sm:w-3/4 bg-gray-800"">
+        <!-- SoundCloud Embed -->
+        <iframe 
+            width="100%" 
+            height="150" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996247603&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; 
+                    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · 
+            <a href="https://soundcloud.com/ritom-sen/i-was-in-a-rush" title="i was in a rush" target="_blank" style="color: #cccccc; text-decoration: none;">i was in a rush</a>
+        </div>
+        <!-- Title & Description -->
+        <div>
+            <h1 class="text-2xl font-extrabold text-white mb-2">i was in a rush</h1>
+            <p class="text-gray-300">
+                This was my final project for my music production class. 
+                I procrastinated so ended up creating, mixing, and mastering this in 1.5 days.
+                I had a tough semester and wanted to display this in the song 🤯. 
+                Wish I had more time to mix it better lol. Don't know how to describe this really.
+            </p>
+        </div>
+
+        
+
+    </div>
+</div>
+
+<!-- 
+  For small screens (mobile):
+  - Thicker border (border-4)
+-->
+<div class="sm:hidden flex items-center justify-center h-screen p-8 max-h-full max-w-full">
+    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 p-4 border-4 border-violet-500 rounded-lg w-full bg-gray-800">
+        <!-- SoundCloud Embed -->
+        <iframe 
+            width="100%" 
+            height="100" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996247603&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+        <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; 
+                    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif; font-weight: 100;">
+            <a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · 
+            <a href="https://soundcloud.com/ritom-sen/i-was-in-a-rush" title="i was in a rush" target="_blank" style="color: #cccccc; text-decoration: none;">i was in a rush</a>
+        </div>
+        <!-- Title & Description -->
+        <div>
+            <h1 class="text-lg font-extrabold text-white mb-2">i was in a rush</h1>
+            <p class="text-gray-300 text-sm">
+                This was my final project for my music production class. 
+                I procrastinated so ended up creating, mixing, and mastering this in 1.5 days.
+                I had a tough semester and wanted to display this in the song 🤯. 
+                Wish I had more time to mix it better lol. Don't know how to describe this really.
+            </p>
+        </div>
+
+        
+        
+    </div>
+</div>
+
+<!-- Back to Music Link -->
+<a 
+    href="/music" 
+    class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mb-auto mr-2 ml-auto mt-2 rounded-md
+           hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700 transition-colors">
+    <p class="text-white font-bold text-xs lg:text-base">&larr;</p>
+</a>
+
+{% endblock %}
