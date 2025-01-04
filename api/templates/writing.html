@@ -1,68 +1,66 @@
-{% extends 'template.html'%}
+{% extends "template.html" %}
 
 {% block content %}
-    <div class="grid grid-cols-1 gap-4 max-h-full max-w-full">
-        <div class="flex-1 p-8 text-white relative">
-        
-            <div class="text-4xl font-extrabold mb-8">
-                <p>Misc Writing</p>
-            </div>
+<div class="grid grid-cols-1 gap-4 max-h-full max-w-full">
+    <!-- Hero / Title Section -->
+    <div class="flex-1 p-8 text-white relative">
+        <div class="text-4xl font-extrabold">
+            <p>Writing ✍️</p>
+        </div>
+    </div>
+
+    <!-- Grid Section (Simplified) -->
+    <div class="p-8 -mt-16 mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 overflow-y-auto max-h-full">
+            
+            <a class=" border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="/writing/1">
+                <div class="p-2">
+                    <h2 class=" text-base lg:text-xl font-bold mb-4 align-center">The Pleasure in Calamity</h2>
+                    <p class="text-sm lg:text-base"><strong>Year Wrote: </strong> <span class="text-zinc-400">2021</span></p>
+                    <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">A poem I wrote when I was super down bad in high school 🥲.</span></p>
+                </div>
+            </a>
+            <!-- For Normal -->
+            <a class=" hidden sm:flex sm:border sm:rounded-lg sm:border-green-500 sm:border-4 sm:bg-gray-800 sm:text-white sm:hover:border-8 sm:hover:border-red-700" href="/writing/2">
+                <div class="sm:p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">The Most Powerful Rap Song of Recent Times</h2>
+                    <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2021</span></p>
+                    <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">Wrote an article style paper of one of the most lyrical rap songs of all time. Hint hint, it is written by Kendrick Lamar. Also from high school lol.</span></p>
+                </div>
+                
+            </a>
+            <!-- For Phones -->
+            <a class=" sm:hidden border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="{{url_for('static', filename='pdf/TPAB.pdf')}}" target="_blank">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">The Most Powerful Rap Song of Recent Times</h2>
+                    <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2021</span></p>
+                    <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">Wrote an article style paper of one of the most lyrical rap songs of all time. Hint hint, it is written by Kendrick Lamar. Also from high school lol.</span></p>
+                </div>
+                
+            </a>
+            <!-- For normal -->
+            <a class="hidden sm:flex sm:border sm:rounded-lg sm:border-green-500 sm:border-4 sm:bg-gray-800 sm:text-white sm:hover:border-8 sm:hover:border-red-700" href="/writing/3">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">Ritom (Re-tum) vs Ritom (Ree-thumb)</h2>
+                    <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2022</span></p>
+                    <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">An essay I wrote about struggling with my name and identity</span></p>
+                </div>
+                
+            </a>
+            <!-- For Phones -->
+            <a class="sm:hidden border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="{{url_for('static', filename='pdf/Literacy_Narrative.pdf')}}" target="_blank">
+                <div class="p-2">
+                    <h2 class="text-base lg:text-xl font-bold mb-4 align-center">Ritom (Re-tum) vs Ritom (Ree-thumb)</h2>
+                    <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2022</span></p>
+                    <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">An essay I wrote about struggling with my name and identity</span></p>
+                </div>
+                
+            </a>
             
         </div>
-        <div class="flex align-center items-center h-screen p-8 h-1/4 mx-auto lg:-mt-80 ">
-            <div class="overflow-y-auto max-h-full grid grid-cols-1 lg:grid-cols-3 gap-4 ">
-                <a class=" border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="/writing/1">
-                    <div class="p-2">
-                        <h2 class=" text-base lg:text-xl font-bold mb-4 align-center">The Pleasure in Calamity</h2>
-                        <p class="text-sm lg:text-base"><strong>Year Wrote: </strong> <span class="text-zinc-400">2021</span></p>
-                        <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">A poem I wrote when I was super down bad in high school 🥲.</span></p>
-                    </div>
-                    
-                </a>
-                <!-- For Normal -->
-                <a class=" hidden sm:flex sm:border sm:rounded-lg sm:border-green-500 sm:border-4 sm:bg-gray-800 sm:text-white sm:hover:border-8 sm:hover:border-red-700" href="/writing/2">
-                    <div class="sm:p-2">
-                        <h2 class="text-base lg:text-xl font-bold mb-4 align-center">The Most Powerful Rap Song of Recent Times</h2>
-                        <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2021</span></p>
-                        <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">Wrote an article style paper of one of the most lyrical rap songs of all time. Hint hint, it is written by Kendrick Lamar. Also from high school lol.</span></p>
-                    </div>
-                    
-                </a>
-                <!-- For Phones -->
-                <a class=" sm:hidden border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="{{url_for('static', filename='pdf/TPAB.pdf')}}" target="_blank">
-                    <div class="p-2">
-                        <h2 class="text-base lg:text-xl font-bold mb-4 align-center">The Most Powerful Rap Song of Recent Times</h2>
-                        <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2021</span></p>
-                        <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">Wrote an article style paper of one of the most lyrical rap songs of all time. Hint hint, it is written by Kendrick Lamar. Also from high school lol.</span></p>
-                    </div>
-                    
-                </a>
-                <!-- For normal -->
-                <a class="hidden sm:flex sm:border sm:rounded-lg sm:border-green-500 sm:border-4 sm:bg-gray-800 sm:text-white sm:hover:border-8 sm:hover:border-red-700" href="/writing/3">
-                    <div class="p-2">
-                        <h2 class="text-base lg:text-xl font-bold mb-4 align-center">Ritom (Re-tum) vs Ritom (Ree-thumb)</h2>
-                        <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2022</span></p>
-                        <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">An essay I wrote about struggling with my name and identity</span></p>
-                    </div>
-                    
-                </a>
-                <!-- For Phones -->
-                <a class="sm:hidden border rounded-lg border-green-500 border-4 bg-gray-800 text-white hover:border-8 hover:border-red-700" href="{{url_for('static', filename='pdf/Literacy_Narrative.pdf')}}" target="_blank">
-                    <div class="p-2">
-                        <h2 class="text-base lg:text-xl font-bold mb-4 align-center">Ritom (Re-tum) vs Ritom (Ree-thumb)</h2>
-                        <p class="text-sm lg:text-base"><strong>Year Wrote: </strong><span class="text-zinc-400">2022</span></p>
-                        <p class="text-sm lg:text-base"><strong>Description:</strong> <span class="text-zinc-400">An essay I wrote about struggling with my name and identity</span></p>
-                    </div>
-                    
-                </a>
-                
-            </div>
-        </div>
-
     </div>
-    
-    
-
+</div>
 {% endblock %}
+
 
  
