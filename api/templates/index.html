@@ -2,56 +2,126 @@
 
 {% block content %}
 
-<!-- Main Content -->
-<div class="flex grid grid-cols-1 gap-4">
-    <div class="flex-1 p-8 text-white relative z-0">
-        <!-- Animated Text -->
-        <div class="lg:text-4xl text-2xl font-bold mb-8 absolute top-16">
-            <div id="animated-text" class="inline"></div>
-        </div>
+<div class="space-y-16">
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"></div>
         
-    </div>
-    <!-- Main Text -->
-    <div class=" flex flex-shrink p-6 mt-8 items-center z-0">
-        <div class="bg-gray-800 mr-auto p-2 border rounded border-dashed border-violet-400 border-4">
-            <h1 class=" font-bold lg:text-lg text-sm md:text-base bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-400 text-transparent">
-                <p><span class="text-white">School:</span> University of Michigan-Ann Arbor <span class="text-white"> 〽️ </span></p>
-                <p><span class="text-white">Studying:</span> Computer Science major, minors in Math and Music</p>
-                <p><span class="text-white">Noneducational Passions:</span> <span class="text-white">⚽</span> soccer, <span class="text-white">🏀</span> basketball, <span class="text-white">🎹</span> piano, <span class="text-white">📜</span> poetry, <span class="text-white">♟️</span> chess, <span class="text-white">✈️</span> traveling</p>
-                <p><span class="text-white">🎧</span> music production, to name a few</p>
-                <p><span class="text-white">Personal Description:</span> <span class=" underline decoration-sky-500 decoration-wavy">optimistic</span>, <span class=" underline decoration-red-500 decoration-wavy">inquisitive</span>, <span class=" underline decoration-orange-500 decoration-wavy">driven</span>, <span class=" underline decoration-yellow-500 decoration-wavy">sympathetic</span>, and <span class=" underline decoration-green-500 decoration-wavy">determined</span>.</p>
-                <p><span class="text-white">Hometown(s):</span> Born in Cedar Rapids, IA -> Grew up in Ann Arbor, MI
-                <p><span class="text-white">What is this!?!?</span> My experiences, book reviews, travel tracker, music projects,</p>
-                <p>research paper summaries, tech projects, and other pieces of writing I am proud of.</p>
-            </h1>
+        <div class="relative z-10 space-y-4">
+            <h2 class="text-slate-400 font-medium tracking-wider uppercase text-sm">Welcome</h2>
+            <div class="h-20 flex items-center">
+                <div id="animated-text" class="text-4xl lg:text-6xl font-black text-white tracking-tight"></div>
+            </div>
         </div>
+    </section>
 
-    </div>
-    <!-- Pictures at Bottom -->
-    <hr class= "border-t border-white">
-    <div class=" mt-4 p-4 grid lg:grid-cols-4 grid-cols-2  gap-4">
-        <img src="{{url_for('static', filename='images/chess_game.jpeg')}}" alt='funny_pic' class="border rounded border-dashed border-violet-400 border-4">
-        <img src="{{url_for('static', filename='images/soccer.jpeg')}}" alt='soccer' class="border rounded border-dashed border-violet-400 border-4">
-        <img src="{{url_for('static', filename='images/basketball.jpg')}}" alt='basketball' class="border rounded border-dashed border-violet-400 border-4">
-        <img src="{{url_for('static', filename='images/greece.jpg')}}" alt='greece' class="border rounded border-dashed border-violet-400 border-4">
+    <!-- Info Card -->
+    <section class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-600/20 to-purple-600/20 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+        <div class="relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 lg:p-12 transition-all duration-300 hover:border-white/20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center">
+                        <span class="w-8 h-[2px] bg-red-500 mr-4"></span>
+                        Quick Snapshot
+                    </h3>
+                    
+                    <div class="space-y-4 text-slate-300 leading-relaxed">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-red-500 font-bold min-w-[100px]">Education</span>
+                            <p>University of Michigan-Ann Arbor <span class="text-xs">〽️</span><br>
+                               <span class="text-slate-400 text-sm">Computer Science major, minors in Math and Music</span></p>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <span class="text-purple-500 font-bold min-w-[100px]">Passions</span>
+                            <p class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">⚽ Soccer</span>
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">🏀 Basketball</span>
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">🎹 Piano</span>
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">📜 Poetry</span>
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">♟️ Chess</span>
+                                <span class="bg-white/5 px-2 py-1 rounded text-xs border border-white/5">🎧 Music Production</span>
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="text-indigo-500 font-bold min-w-[100px]">Personal</span>
+                            <p class="italic">
+                                <span class="underline decoration-sky-500/50 decoration-2">Optimistic</span>, 
+                                <span class="underline decoration-red-500/50 decoration-2">inquisitive</span>, 
+                                <span class="underline decoration-orange-500/50 decoration-2">driven</span>, 
+                                <span class="underline decoration-yellow-500/50 decoration-2">sympathetic</span>, and 
+                                <span class="underline decoration-green-500/50 decoration-2">determined</span>.
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4 pt-4">
+                            <span class="text-slate-500 font-bold min-w-[100px]">Hometown</span>
+                            <p>Ann Arbor, MI <span class="text-slate-500">(born in Cedar Rapids, IA)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block">
+                    <div class="bg-gradient-to-br from-red-500/10 to-transparent p-6 rounded-2xl border border-white/5">
+                        <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-4">Current Status</h4>
+                        <p class="text-slate-300 text-sm italic">"Sharing my experiences, book reviews, music projects, and research summaries."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="space-y-6">
+        <h3 class="text-xl font-bold text-white flex items-center">
+            Life in Frames
+            <span class="ml-4 h-[1px] flex-1 bg-white/10"></span>
+        </h3>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {% set images = [
+                ('chess_game.jpeg', 'Chess match'),
+                ('soccer.jpeg', 'On the pitch'),
+                ('basketball.jpg', 'Game day'),
+                ('greece.jpg', 'Travels in Greece')
+            ] %}
+            
+            {% for img, alt in images %}
+            <div class="group relative aspect-square overflow-hidden rounded-2xl bg-slate-800 border border-white/10">
+                <img src="{{url_for('static', filename='images/' + img)}}" alt="{{alt}}" 
+                     class="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:rotate-2">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                    <span class="text-xs font-medium text-white">{{alt}}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Featured Music Overlay (Updated for new design) -->
+    <div class="fixed bottom-8 right-8 z-40 group">
+        <div class="absolute inset-0 bg-red-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition duration-300"></div>
+        <div class="relative bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl flex items-center space-x-4 max-w-sm transform transition duration-300 hover:-translate-y-1">
+            <div class="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+                <img src="{{url_for('static', filename='images/kenny.jpg')}}" alt="Current Favorite" class="h-full w-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+                    <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                </div>
+            </div>
+            <div class="flex-1 min-w-0 pr-4">
+                <h4 class="text-xs font-bold text-red-500 uppercase tracking-widest mb-1">On Repeat</h4>
+                <p class="text-white font-bold truncate text-sm">Get an Idea</p>
+                <p class="text-slate-400 text-xs truncate">Kenny Mason • PUP PACK EP</p>
+            </div>
+            <a href="https://open.spotify.com/track/63x6R9z0ioYFf1vDfVIhya?si=68baa1c7c7ff499a" 
+               target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition">
+               <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.485 17.31c-.22.36-.684.475-1.043.256-2.887-1.764-6.522-2.164-10.803-1.18-.41.093-.822-.165-.916-.575-.093-.41.165-.822.575-.916 4.697-1.073 8.71-.61 11.93 1.36.36.218.475.682.257 1.055zm1.465-3.264c-.277.45-.865.59-1.315.313-3.303-2.03-8.342-2.617-12.25-1.43-.51.155-1.04-.145-1.196-.654-.155-.51.145-1.04.654-1.195 4.467-1.356 10.02-.705 13.8 1.613.45.278.59.865.312 1.317zm.126-3.41c-3.96-2.352-10.49-2.57-14.27-1.422-.61.185-1.25-.17-1.434-.78-.184-.61.17-1.25.78-1.433 4.35-1.322 11.55-1.057 16.08 1.632.55.326.73 1.04.404 1.59-.326.55-1.04.73-1.59.404z"/></svg>
+            </a>
+        </div>
     </div>
 </div>
 
-
-<!-- Music Card -->
-<div class=" hidden xl:border xl:rounded xl:border-dashed xl:border-violet-400 xl:border-4 xl:bg-gray-800 xl:text-white xl:p-4 2xl:w-1/4 xl:w-1/5 xl:absolute xl:top-4 xl:right-4 xl:flex xl:flex-row xl:flex-shrink">
-    <div>
-        <h2 class="2xl:text-2xl text-lg font-bold mb-4">Current Favorite Song</h2>
-        <p class= "text-sm 2xl:text-base"><strong>Title:</strong> <p class="text-zinc-400">Get an Idea</p></p>
-        <p class= "text-sm 2xl:text-base"><strong>Artist:</strong> <p class="text-zinc-400">Kenny Mason</p></p>
-        <p class= "text-sm 2xl:text-base"><strong>Album:</strong> <p class="text-zinc-400">PUP PACK EP</p></p>
-    </div>
-    <div class="">
-        <a href="https://open.spotify.com/track/63x6R9z0ioYFf1vDfVIhya?si=68baa1c7c7ff499a" target="_blank" rel="noopener noreferrer">
-            <img class="ml-2 inline-flex hover:border hover:border-4 hover:border-red-700 " src="{{url_for('static', filename='images/kenny.jpg')}}" alt="kenny">
-        </a>
-    </div>
-</div>
 <!-- Animation Script -->
 <script src="{{url_for('static', filename='js/main.js')}}"></script>
 

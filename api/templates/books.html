@@ -1,72 +1,84 @@
 {% extends 'template.html'%}
 
 {% block content %}
-<div class="grid grid-cols-1 gap-4 max-h-full max-w-full">
-    <div class="flex-1 p-8 text-white relative">
-        
-        <div class="text-4xl font-extrabold ">
-            <p>Books</p>
-        </div>
-        
-    </div>
-    <div class="flex justify-center items-center h-screen p-8 ">
-        <div class="overflow-y-auto max-h-full grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div class=" border rounded border-double border-yellow-200 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4">The Alchemist</h2>
-                    <div class="mb-2 items-center">
-                        <a href="https://www.goodreads.com/en/book/show/18144590" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-24 h-36" src="{{url_for('static', filename='images/Alchemist.jpg')}}" alt="The Alchemist">
-                        </a>
-                    </div>
-                    <p><strong>Author:</strong> <span class="text-zinc-400">Paulo Coelho</span></p>
-                    <p><strong>Published:</strong> <span class="text-zinc-400">1988</span></p>
-                    <p><strong>Rating:</strong> <span class="text-zinc-400">7/10</span></p>
-                    <p><strong>Short Explanation:</strong> <span class="text-zinc-400 text-sm text-wrap">I really enjoyed the message of this book. It is a message that I deeply resonate with and will continue to believe in: to follow your dreams. The short stories throughout the book were also awesome, specifically the Narcissus flower story and the story of keeping the oil on the spoon. These stories say so much with so little. I think I would have enjoyed this book more however if I could read it in its original language as I believe the translation threw the delivery of the story off. It oversimplified the language and made the storytelling seem too straightforward, it made the fantasy adventure feel more like a little stroll in the park. </span></p>
 
-                </div>
+<div class="space-y-12">
+    <!-- Header -->
+    <header class="space-y-4">
+        <h2 class="text-4xl lg:text-5xl font-black text-white tracking-tight">Bookshelf</h2>
+        <p class="text-slate-400 max-w-2xl leading-relaxed">
+            Reviews and thoughts on the books I've been reading. 
+            From fantasy epics to personal development.
+        </p>
+    </header>
+
+    <!-- Books Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% set books = [
+            {
+                'title': 'The Alchemist',
+                'author': 'Paulo Coelho',
+                'year': '1988',
+                'rating': '7/10',
+                'image': 'Alchemist.jpg',
+                'link': 'https://www.goodreads.com/en/book/show/18144590',
+                'desc': 'I really enjoyed the message of this book: to follow your dreams. The short stories throughout were awesome, specifically the Narcissus flower story. I think I would have enjoyed it more in its original language as the translation felt a bit oversimplified at times.'
+            },
+            {
+                'title': 'Fourth Wing',
+                'author': 'Rebecca Yarros',
+                'year': '2023',
+                'rating': 'Reading...',
+                'image': 'fourth_wing.jpeg',
+                'link': 'https://www.goodreads.com/en/book/show/61431922',
+                'desc': 'Currently diving into this world of dragons and riders.'
+            },
+            {
+                'title': 'Atomic Habits',
+                'author': 'James Clear',
+                'year': '2018',
+                'rating': 'Reading...',
+                'image': 'atomic_habits.jpg',
+                'link': 'https://www.goodreads.com/book/show/40121378-atomic-habits',
+                'desc': 'Exploring the science of how small changes can lead to remarkable results.'
+            }
+        ] %}
+
+        {% for book in books %}
+        <article class="group bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl flex flex-col">
+            <div class="relative aspect-[2/3] overflow-hidden bg-slate-800">
+                <img src="{{url_for('static', filename='images/' + book.image)}}" alt="{{book.title}}" 
+                     class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                
+                <a href="{{book.link}}" target="_blank" 
+                   class="absolute bottom-4 right-4 p-3 bg-red-600 rounded-full text-white shadow-xl transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/>
+                    </svg>
+                </a>
             </div>
-            <div class=" border rounded border-double border-yellow-200 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4">Fourth Wing</h2>
-                    <div class="mb-2 items-center">
-                        <a href="https://www.goodreads.com/en/book/show/61431922" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-24 h-36" src="{{url_for('static', filename='images/fourth_wing.jpeg')}}" alt="Fourth Wing">
-                        </a>
-                    </div>
-                    <p><strong>Author:</strong> <span class="text-zinc-400">Rebecca Yarros</span></p>
-                    <p><strong>Published:</strong> <span class="text-zinc-400">2023</span></p>
-                    <p><strong>Rating:</strong> <span class="text-zinc-400">...</span></p>
-                    <p><strong>Short Explanation:</strong> <span class="text-zinc-400 text-sm text-wrap">Currently Reading...</span></p>
 
+            <div class="p-6 space-y-4 flex-1 flex flex-col">
+                <div class="space-y-1">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-red-500 uppercase tracking-widest">{{book.rating}}</span>
+                        <span class="text-slate-500 text-xs">{{book.year}}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-red-500 transition-colors">{{book.title}}</h3>
+                    <p class="text-slate-400 text-sm">by {{book.author}}</p>
                 </div>
                 
+                <p class="text-slate-300 text-sm leading-relaxed flex-1 italic">
+                    {{book.desc}}
+                </p>
             </div>
-            <div class=" border rounded border-double border-yellow-200 border-4 bg-gray-800 text-white">
-                <div class="p-2">
-                    <h2 class="text-2xl font-bold mb-4">Atomic Habits</h2>
-                    <div class="mb-2 items-center">
-                        <a href="https://www.goodreads.com/book/show/40121378-atomic-habits" target="_blank" rel="noopener noreferrer">
-                            <img class="inline-flex hover:border hover:border-4 hover:border-red-700 w-24 h-36" src="{{url_for('static', filename='images/atomic_habits.jpg')}}" alt="Fourth Wing">
-                        </a>
-                    </div>
-                    <p><strong>Author:</strong> <span class="text-zinc-400">James Clear</span></p>
-                    <p><strong>Published:</strong> <span class="text-zinc-400">2018</span></p>
-                    <p><strong>Rating:</strong> <span class="text-zinc-400">...</span></p>
-                    <p><strong>Short Explanation:</strong> <span class="text-zinc-400 text-sm text-wrap">Currently Reading...</span></p>
-
-                </div>
-                
-            </div>
-            
-            
-            
-            
-        </div>
-        
+        </article>
+        {% endfor %}
     </div>
-
 </div>
+
+{% endblock %}
     
     
 {% endblock %}

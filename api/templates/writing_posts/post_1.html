@@ -1,38 +1,68 @@
 {% extends 'template.html' %}
 
 {% block content %}
-<div class="flex align-center items-center h-screen p-8">
-    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
-        <div class=" border rounded-lg border-green-500 border-4 bg-gray-800 text-gray-200">
-            <div class="p-2">
-                <a href="/writing" class="ml-auto mb-2 mr-1 flex flex-col lg:w-1/6 w-1/12 outline outline-black bg-gray-700 text-gray-500 text-center items-center p-1 rounded-md hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
-                    <p class="text-white lg:font-bold text-xs lg:text-base">&larr;</p>
-                </a>
-                <p class="justify-center text-2xl text-blue-300">The Pleasure in Calamity</p>
-                <p class="text-lg">Ritom Sen</p><br>
 
-                <p>I was once sitting on a cloud, hypnotized by the beauty of my proximity. </p>
-                <p>In love with familiarity and comfortable with my projections.</p><br>
+<div class="space-y-8 max-w-3xl mx-auto">
+    <!-- Back Button -->
+    <a href="/writing" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium">Back to Writing</span>
+    </a>
 
-                <p>Abruptly, I spun into infinite disarray.<br>I had suddenly fell from my high altitude into a pit of anguish.<br> With only two legs bearing my fall, I was broken.<br> Trying to find the other half of my heart, and the time to heal my bones, I fell deeper into the valley.<br> I stared through the shadow of death and saw only my thoughts shrouded inside darkness.<br> Without light to reveal the way, my vision was captivated by gloom. The murkiness had deluded my sight.</p><br>
-                
-                <p>Avoiding catastrophe, I griped onto life assiduously.<br>I remembered that to return to elevation, I had to climb this rope through adversity.<br>Despite my shattered physicality and mental malady, to overcome the eerie abyss I recognized it was essential to carry the burden of distress on my back as I blindly held onto the thin string of hope.<br>Hoping I would get pulled back up one day Hoping my addiction to persistence would save me.</p><br>
-                
-                <p>I waited with perseverance.<br>And eventually a figure of my perceived naive and irrational optimism pulled me up from the depths into the light.<br>I grew here;<br>The buds of my convictions started germination and out bloomed the flowers of my destiny.</p><br>
-                
-                <p>Knowing I&rsquo;ve seen the worst;<br>Aware that I&rsquo;ve faced the nadir of my sufferings and still constructed a belief which incepted growth, I was no longer frightened by misfortune.<br>Actually, through my fallacies I realized misfortune was fictitious.<br>The definition was truly a figment of my tunneled imagination. The concept was misconstrued.<br>I comprehended that my losses had manufactured an opportunity for winning;<br>I fell from my peak only to climb higher.</p><br>
-                
-                <p>Now I sit here, on a cloud soaring far above the previous, with my heart finally pieced together, and my bones newly aligned<br>Reminiscing on the treacherous past.<br>Observing the beauty of the distance.<br>Appreciating the pleasures of my calamity.</p>               
+    <!-- Poem Card -->
+    <article class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-10 lg:p-16 space-y-12">
+            <!-- Header Section -->
+            <header class="space-y-2 border-b border-white/5 pb-8">
+                <h1 class="text-3xl lg:text-4xl font-black text-white tracking-tight">The Pleasure in Calamity</h1>
+                <div class="flex items-center justify-between">
+                    <p class="text-slate-400 font-medium">by Ritom Sen</p>
+                    <span class="text-slate-600 text-sm">2021</span>
+                </div>
+            </header>
+
+            <!-- Poem Body -->
+            <div class="prose prose-invert prose-slate max-w-none">
+                <div class="space-y-8 text-slate-300 leading-relaxed text-lg italic font-serif">
+                    <p>I was once sitting on a cloud, hypnotized by the beauty of my proximity.<br>
+                    In love with familiarity and comfortable with my projections.</p>
+
+                    <p>Abruptly, I spun into infinite disarray.<br>
+                    I had suddenly fell from my high altitude into a pit of anguish.<br>
+                    With only two legs bearing my fall, I was broken.<br>
+                    Trying to find the other half of my heart, and the time to heal my bones, I fell deeper into the valley.<br>
+                    I stared through the shadow of death and saw only my thoughts shrouded inside darkness.<br>
+                    Without light to reveal the way, my vision was captivated by gloom. The murkiness had deluded my sight.</p>
+                    
+                    <p>Avoiding catastrophe, I griped onto life assiduously.<br>
+                    I remembered that to return to elevation, I had to climb this rope through adversity.<br>
+                    Despite my shattered physicality and mental malady, to overcome the eerie abyss I recognized it was essential to carry the burden of distress on my back as I blindly held onto the thin string of hope.<br>
+                    Hoping I would get pulled back up one day Hoping my addiction to persistence would save me.</p>
+                    
+                    <p>I waited with perseverance.<br>
+                    And eventually a figure of my perceived naive and irrational optimism pulled me up from the depths into the light.<br>
+                    I grew here;<br>
+                    The buds of my convictions started germination and out bloomed the flowers of my destiny.</p>
+                    
+                    <p>Knowing I’ve seen the worst;<br>
+                    Aware that I’ve faced the nadir of my sufferings and still constructed a belief which incepted growth, I was no longer frightened by misfortune.<br>
+                    Actually, through my fallacies I realized misfortune was fictitious.<br>
+                    The definition was truly a figment of my tunneled imagination. The concept was misconstrued.<br>
+                    I comprehended that my losses had manufactured an opportunity for winning;<br>
+                    I fell from my peak only to climb higher.</p>
+                    
+                    <p>Now I sit here, on a cloud soaring far above the previous, with my heart finally pieced together, and my bones newly aligned<br>
+                    Reminiscing on the treacherous past.<br>
+                    Observing the beauty of the distance.<br>
+                    Appreciating the pleasures of my calamity.</p>
+                </div>
             </div>
-            
         </div>
-        
-        
-        
-        
-    </div>
-    
-    
+    </article>
 </div>
+
+{% endblock %}
 
 {% endblock %}
