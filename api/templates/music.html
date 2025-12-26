@@ -15,17 +15,17 @@
     <!-- Music Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {% set tracks = [
-            ('sleep', '2024', 'A trio written for violin, piano, and saxophone. Inspired by frustration and a lack of sleep.', '1'),
-            ('i was in a rush', '2024', 'Final project for my music production class.', '2'),
+            ('sleep', '2024', 'A trio written for violin, piano, and saxophone. It was inspired by my frustration and a lack of sleep at the time 🥲.', '1'),
+            ('i was in a rush', '2024', 'Final project for my music production class', '2'),
             ('lot of synths', '2024', 'Electronic music, completely made with field recordings.', '3'),
             ('Waltz No. 1', '2024', 'A quick solo Piano waltz.', '4'),
-            ('JFK', '2024', 'Electronic music made with JFK speech, bell tower, and phone ringtone samples.', '5'),
+            ('JFK', '2024', 'Electronic music, made with just 3 random samples. JFK speech, bell tower, and phone ringtone.', '5'),
             ('Fantasia No. 1', '2024', 'A solo violin piece.', '6'),
             ('some piano songs', '2021', 'A performance of my favorite Chopin pieces.', '7')
         ] %}
 
         {% for title, year, desc, id in tracks %}
-        <a href="/music/{{id}}" class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-slate-900/60 hover:-translate-y-1">
+        <a href="/music/{{id}}" class="group relative bg-[#4c1d95]/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-red-900/40 hover:-translate-y-1">
             <div class="space-y-4">
                 <div class="flex justify-between items-start">
                     <div class="p-3 bg-red-600/10 rounded-xl group-hover:bg-red-600 transition duration-300">
@@ -38,7 +38,7 @@
                 
                 <div class="space-y-2">
                     <h3 class="text-xl font-bold text-white group-hover:text-red-500 transition-colors">{{title}}</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed line-clamp-2">
+                    <p class="text-slate-400 text-sm leading-relaxed">
                         {{desc}}
                     </p>
                 </div>
@@ -55,5 +55,4 @@
     </div>
 </div>
 
-{% endblock %}
 {% endblock %}

@@ -15,7 +15,7 @@
     <!-- Project Grid -->
     <div class="grid grid-cols-1 gap-8">
         <!-- GeminiScript Project -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
+        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
             <div class="p-8 lg:p-10 space-y-6">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
@@ -23,7 +23,7 @@
                             <span class="px-3 py-1 bg-red-500/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-500/20">Hackathon</span>
                             <span class="text-slate-500 text-sm">2024</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">GeminiScript</h3>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">MHacks x Google AI Hackathon Project - GeminiScript</h3>
                     </div>
                     <a href="https://devpost.com/software/gemiscript-ai" target="_blank" 
                        class="inline-flex items-center px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
@@ -33,9 +33,8 @@
                 </div>
 
                 <div class="space-y-4">
-                    <p class="text-slate-300 leading-relaxed">
-                        Created at MHacks x Google Hackathon, GeminiScript is a Google Docs copilot enabling voice-driven AI editing. 
-                        Designed for the future of AR/VR where traditional typing is replaced by natural voice interaction.
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        This paper is about how Spotify curates playlists for their users. This was a project that I created with 3 other teammates at the Mhacks x Google Hackathon. This was my first hackathon and I originally was going to do this solo, but I ended up hitting up a random girl (who seemed very experienced with hackathons) on slack and was able to join their team :). They already had this idea of essentially creating a google docs copilot that helped you use voice chat to link up with AI to edit and enhance your google doc. We used the Google Gemini API to connect to the LLM, and used python to link this with our AppScript, which edited the google doc. The point is that in the future, if we are using all this AR/VR stuff, then we won't be typing all that and would rather be using our voice, so this way we can make edits, fix errors, and create essays on google docs with just our voice. We didn't win anything but I was more than satisfied with my first hackathon experience. I met some super cool people from MSU and had a great time making a cool project. Check out the devpost to see the demo video!
                     </p>
                     
                     <div class="flex flex-wrap gap-2">
@@ -48,7 +47,7 @@
         </article>
 
         <!-- cnct Project -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
+        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
             <div class="grid lg:grid-cols-2">
                 <div class="p-8 lg:p-10 space-y-6">
                     <div class="space-y-1">
@@ -56,13 +55,11 @@
                             <span class="px-3 py-1 bg-purple-500/10 text-purple-500 text-xs font-bold uppercase tracking-widest rounded-full border border-purple-500/20">Mobile App</span>
                             <span class="text-slate-500 text-sm">2024</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-500 transition-colors">cnct 🎂</h3>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-500 transition-colors">Birthday Reminder App "cnct" 🎂</h3>
                     </div>
 
-                    <p class="text-slate-300 leading-relaxed">
-                        A personal birthday reminder app built to maintain long-term friendships. 
-                        Features contact integration, custom notifications, and pre-filled messaging. 
-                        My first dive into the Flutter ecosystem.
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        One thing I love to do is say Happy Birthday to people, especially because I know how much I appreciate it when I get a good Happy Birthday text. Additionally, it helps you maintain friendships from people you may have not talked to for a long time. But, I frequently forget birthdays. I don't really like the way gcal does them because it is a grind to load them all on there, and I rarely look at the birthdays on snapchat (even tho it is surprisingly really good for that). So, I decided to create an app that reminds me of my friends birthdays. Introducing Cnct. I built this app using Flutter, and used a lot of the plugins that come with it. I used inpsiration from a flutter app I saw online called Chcklst as inspiration for the UI of the app. Some of the main features include: Importing your birthdays from your contacts, getting notifications on your birthday, being able to press a button and go straight to text message with a prefilled birthday message for that person's contact, insertion and deletion of birthdays, viewing birthdays today, within the next 2 weeks and per month, searching for poeple's birthdays by name. Overall, this was my first complete flutter app and it was fun to learn the framework, dart is like a combination of javascript, python, and c++ which I knew so it was intersting combining them. Additionally, it was really rewarding downloading the app on my phone and actually using what I had created :) Onto the next one.
                     </p>
 
                     <div class="flex flex-wrap gap-2">
@@ -80,18 +77,37 @@
 
                 <div class="bg-slate-950/40 p-8 lg:p-10 border-l border-white/5">
                     <div class="grid grid-cols-2 gap-4">
-                        {% for img in ['cnct.png', 'cnct1.png', 'cnct_search.png', 'cnct_slider.png'] %}
-                        <div class="aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
-                            <img src="{{url_for('static', filename='images/' + img)}}" alt="cnct screenshot" class="w-full h-full object-cover">
+                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
+                            <img src="{{url_for('static', filename='images/cnct.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
+                                <p class="text-[10px] text-white/70">Modern UI inspired by Chcklst.</p>
+                            </div>
                         </div>
-                        {% endfor %}
+                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
+                            <img src="{{url_for('static', filename='images/cnct1.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
+                                <p class="text-[10px] text-white/70">Importing birthdays from your contacts.</p>
+                            </div>
+                        </div>
+                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
+                            <img src="{{url_for('static', filename='images/cnct_search.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
+                                <p class="text-[10px] text-white/70">Searching for birthdays by name.</p>
+                            </div>
+                        </div>
+                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
+                            <img src="{{url_for('static', filename='images/cnct_slider.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
+                                <p class="text-[10px] text-white/70">Rewarding to use what I had created :)</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </article>
 
         <!-- Temsite Project -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
+        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
             <div class="p-8 lg:p-10 space-y-6">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
@@ -99,7 +115,7 @@
                             <span class="px-3 py-1 bg-indigo-500/10 text-indigo-500 text-xs font-bold uppercase tracking-widest rounded-full border border-indigo-500/20">Web Systems</span>
                             <span class="text-slate-500 text-sm">2024</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-500 transition-colors">Temsite 🖥️</h3>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-500 transition-colors">This Website 🖥️</h3>
                     </div>
                     <a href="https://github.com/ritomsen/Temsite" target="_blank" 
                        class="inline-flex items-center px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
@@ -108,9 +124,8 @@
                 </div>
 
                 <div class="space-y-4">
-                    <p class="text-slate-300 leading-relaxed">
-                        My personal digital garden. Built using skills from EECS 485 (Web Systems) to showcase my projects, 
-                        writing, and life experiences. Focused on clean design and modularity.
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        This was the first completely personal project I set myself out to do. I used my EECS 485 skills (web systems) and whipped up something where I can put my life. This is especically helpful to keep track of some of the things I will be working on thorughout my gap. Stay tuned for more...
                     </p>
                     
                     <div class="flex flex-wrap gap-2">
@@ -126,5 +141,3 @@
 
 {% endblock %}
 
-
-{% endblock %}

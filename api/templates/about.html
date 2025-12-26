@@ -6,15 +6,15 @@
     <!-- Header -->
     <header class="space-y-4">
         <h2 class="text-4xl lg:text-5xl font-black text-white tracking-tight">About Me</h2>
-        <p class="text-slate-400 max-w-2xl leading-relaxed italic">
-            "More professionally..."
+        <p class="text-slate-400 max-w-2xl leading-relaxed">
+            More profesionally....
         </p>
     </header>
 
     <!-- Experience Timeline -->
     <div class="grid grid-cols-1 gap-12">
         <!-- Neo Scholar -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
             <div class="p-8 lg:p-10 space-y-8">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
@@ -28,14 +28,13 @@
 
                 <div class="space-y-6">
                     <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                        Selected as one of 150 Neo Scholar Finalists from a global pool. Neo is a startup community that supports current and future founders. 
-                        Inspired by peers starting innovative companies and conducting cutting-edge ML research, this experience has been pivotal in refining my entrepreneurial mindset.
+                        After a rigorous application and interview process, I was selected as one of 150 Neo Scholar Finalists in Fall of 2024. Neo is a startup community that supports and fosters current and future founders. My interest in startups started during my gap semester, and I heard about how great Neo was through 2 of my buddies who were Neo Scholars. I applied with no expectations and ended up getting through the interviews and being selected! I was able to meet so many crazy driven and super intelligent people. My imposter syndrome definitely hit hard when I was meeting people my age who have started insane startups, or have done very interesting ML research, but it inspired me to work harder and continue on my path of learning so that one day my entrepreneurial mindset can take charge. Below is a picture of the Neo scholar finalist NYC meetup where I linked up with some fellow Umich students! I have been able to meet so many founders through this and am excited to continue to be active within the Neo community.
                     </p>
                     
                     <div class="relative aspect-video lg:aspect-auto lg:h-[400px] rounded-2xl overflow-hidden border border-white/10">
                         <img src="{{url_for('static', filename='images/neo_finalist.jpg')}}" alt="Neo Finalist Meetup" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
-                            <p class="text-xs text-white/70">Neo Scholar Finalist NYC Meetup with fellow U-M students.</p>
+                            <p class="text-xs text-white/70">Neo Scholar Finalist NYC Meetup where I linked up with some fellow Umich students!</p>
                         </div>
                     </div>
                 </div>
@@ -43,36 +42,35 @@
         </article>
 
         <!-- Capital One 2024 -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
             <div class="p-8 lg:p-10 space-y-8">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
                         <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-red-600/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-600/20">Software Engineering Intern</span>
-                            <span class="text-slate-500 text-sm">Summer 2024 • Chicago</span>
+                            <span class="px-3 py-1 bg-red-600/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-600/20">Capital One TIP Internship</span>
+                            <span class="text-slate-500 text-sm">Summer 2024</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">Capital One</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-white/5 text-slate-400 text-xs rounded border border-white/5">Go</span>
-                        <span class="px-2 py-1 bg-white/5 text-slate-400 text-xs rounded border border-white/5">React</span>
-                        <span class="px-2 py-1 bg-white/5 text-slate-400 text-xs rounded border border-white/5">TypeScript</span>
                     </div>
                 </div>
 
                 <div class="space-y-6">
                     <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                        Engineered a full-stack internal tool for the Card Tech Partnerships team to debug complex decision orchestrators. 
-                        Implemented a DAG-based visualization and concurrent backend processing, cutting end-to-end testing time by 33%. 
-                        The product reached over 50 active engineer users before the end of the internship.
+                        During Summer of 2024, I interned at Capital One again, but this time in the Chicago Office. I was apart of Team OutOfCtrl in Card Tech Partnerships. My intern pod consisted of some really smart and awesome people, and I had an amazing manager as well. The problem at hand: end to end testing the new decision orchestrator for credit card applications at Capital One takes way too long, and it also was very hard to debug. So our project was pretty simple, create a full stack app where you can input a applicationId and output the responses from each API within the decision orchestrator. To do this however, we would have to really understand how the decision orchestrator works so that we can create a DAG of the dependencies. As to retrieve the data from these endpoints, we needed to input different parameters, but we wanted to take care of that in the backend. We coded the project with a Go backend, and React Typescript frontend, making the backend API calls concurrent based on the level of the DAG. Throughout the summer, I worked on frontend design, backend design, the DAG for dependencies, and contributed to many parts of the backend and frontend. The best part of this project was other engineers at Capital One were our stakeholders, so we constantly met with different engineers to gauge feedback on design and improve our product. Before the summer ended, we already had 50+ engineers using our product, and potentially much more after we left. In fact, we even caught other interns using our product for help debugging an endpoint, and they didn't even know we made it! We helped cut the time for end to end testing by 33%, saving engineers' valuable time, and thus saved the company money. In the future, our product could be used by 100s of engineers so they can better debug the decision orchestrator. I loved this internship because I was able to help make something that actually is going to be used by many engineers and that will help the company save money. Additionally, I was able to learn Go which is a really cool language. Lastly, and most importantly, I loved this internship because I was able to be meet and become very close with the so many intelligent, kind, and amazing people while connecting with the other Capital One Chicago interns.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="aspect-square rounded-2xl overflow-hidden border border-white/10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
                             <img src="{{url_for('static', filename='images/cap_one_team2.jpg')}}" alt="Team OutOfCtrl" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">Connecting with fellow Capital One Chicago interns.</p>
+                            </div>
                         </div>
-                        <div class="aspect-square rounded-2xl overflow-hidden border border-white/10">
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
                             <img src="{{url_for('static', filename='images/cap_one_team3.jpg')}}" alt="Capital One Interns" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">My intern pod: some of the smartest and most awesome people I've worked with.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,93 +78,195 @@
         </article>
 
         <!-- Capital One 2023 -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
-            <div class="p-8 lg:p-10 space-y-6">
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-8">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
                         <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-red-600/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-600/20">Software Engineering Intern</span>
-                            <span class="text-slate-500 text-sm">Summer 2023 • McLean</span>
+                            <span class="px-3 py-1 bg-red-600/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-600/20">Capital One TIP Internship</span>
+                            <span class="text-slate-500 text-sm">Summer 2023</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">Capital One</h3>
                     </div>
                 </div>
-                <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                    Developed a Slack-based automation bot using NLP techniques to assist data stewards. 
-                    Presented to Directors and VPs, sparking a deep interest in machine learning that led me to join the Michigan Data Science Team.
-                </p>
-                <div class="aspect-video lg:h-64 rounded-2xl overflow-hidden border border-white/10">
-                    <img src="{{url_for('static', filename='images/cap_one_team.jpg')}}" alt="Capital One Team" class="w-full h-full object-cover">
+
+                <div class="space-y-6">
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        I interned at Capital One apart of their Technology Internship Program (software engineering internship) my sophomore summer in Mclean, VA. I was able to work with a wonderful team full of interns from colleges across the country. We were given a problem from our manager and sought a way to fix it. The problem: data stewards at the company were overwhelmed and it was hard for them to learn what they had to do. We interviewed employees at the company, garnered feedback, and designed a solution for this. We created a slack app/bot using basic NLP and ML techniques and leveraged internal API's within Capital One to help automate tasks for these data stewards; additionally, our product helped provide them resources to help with onboarding. We again met with data stewards to further refine our product and by the end of the summer we were able to present our project in front of Directors and even VPs at the company. This first started my interest in ML and since I have taken Intro to ML at my school as well as joined the Michigan Data Science Team so I can work on more ML projects. I learned a lot throughout this internship, specifically pertaining the workflow of a software engineer, but my favorite part of this internship was exploring the DC area and making lifelong relationships with my intern class.
+                    </p>
+                    
+                    <div class="relative aspect-video lg:h-64 rounded-2xl overflow-hidden border border-white/10">
+                        <img src="{{url_for('static', filename='images/cap_one_team.jpg')}}" alt="Capital One Team" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                            <p class="text-xs text-white/70">Exploring the DC area with my wonderful intern class.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
 
         <!-- JBR Sports -->
-        <article class="group relative bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
-            <div class="p-8 lg:p-10 space-y-6">
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-8">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div class="space-y-1">
                         <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-blue-500/10 text-blue-500 text-xs font-bold uppercase tracking-widest rounded-full border border-blue-500/20">Co-Founder</span>
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-500 text-xs font-bold uppercase tracking-widest rounded-full border border-blue-500/20">JBR Sports Org LLC</span>
                             <span class="text-slate-500 text-sm">2021 - 2023</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition-colors">JBR Sports Org LLC</h3>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-500 transition-colors">Co-Founder</h3>
                     </div>
                 </div>
-                <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                    Co-founded a boutique recreational sports company catering to the late-teen and early-20s demographic. 
-                    Scaled leagues to over 150 participants, managed weekly digital content, and successfully partnered with 
-                    local organizations for community-driven charity events.
-                </p>
-                <div class="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
-                    <a href="https://voyagemichigan.com/interview/hidden-gems-meet-josh-ben-ritom-finn-stack-sen-of-jbr-sports/" target="_blank" class="flex-shrink-0 px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-blue-400 hover:text-blue-300 text-xs transition">VoyageMichigan Interview</a>
-                    <a href="https://thesalinepost.com/g/saline-mi/n/37537/jbr-sports-llc-and-champions-league" target="_blank" class="flex-shrink-0 px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-blue-400 hover:text-blue-300 text-xs transition">Saline Post Article</a>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="{{url_for('static', filename='images/JBR1.jpg')}}" alt="JBR Action" class="rounded-2xl border border-white/10 object-cover aspect-square">
-                    <img src="{{url_for('static', filename='images/JBR2.jpg')}}" alt="JBR Event" class="rounded-2xl border border-white/10 object-cover aspect-square">
+
+                <div class="space-y-6">
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        I grew up playing soccer competitivley since I was 3, and also loved playing basketball with my friends. So with this passion for sports, two friends and I started a "luxury" recreational sports company when I was in high school, and continued this in college. The idea was that we wanted to make rec sports more fun, more interesting, and more youthful; we wanted to create a vibe more in tune with the late teen early 20s demographic. For example, in our main basketball league, the "JBR Champions League", we garnered over 150 participants with our new game format, weekly writeups full of jokes, predictions, and recaps, an All Star Game with cash prizes including a 3pt contest and dunk contest, a huge trophy, and weekly professionally curated mixtapes of our games. We have hosted tournaments and leagues for basketball, volleyball, and even NBA 2K; plus we have sponsored athletes in the past, gotten sponsored by companies, and hosted a tournament all the way in Florida (we all live in Michigan)! My favorite JBR event was when we partnered up with the Saline Fair during Summer 2022 to host Kids Day and raise money for Saline Area Social Services; we set up some sports for the kids and also acquired a bouncy house and a dunk tank that we took turns in. Our most recent tournament was Fall 2022 where we hosted a frat basketball tournament with 10 different social frats across Umich. Since then we have all been super busy with school and our lives but hopefully one day we can bring JBR back!
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://voyagemichigan.com/interview/hidden-gems-meet-josh-ben-ritom-finn-stack-sen-of-jbr-sports/" target="_blank" class="px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-blue-400 hover:text-blue-300 text-xs transition">VoyageMichigan Interview</a>
+                        <a href="https://thesalinepost.com/g/saline-mi/n/37537/jbr-sports-llc-and-champions-league" target="_blank" class="px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-blue-400 hover:text-blue-300 text-xs transition">Saline Post Article</a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
+                            <img src="{{url_for('static', filename='images/JBR1.jpg')}}" alt="JBR Action" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">Hosting tournaments with weekly professionally curated mixtapes.</p>
+                            </div>
+                        </div>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
+                            <img src="{{url_for('static', filename='images/JBR2.jpg')}}" alt="JBR Event" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">Partnering with the Saline Fair to raise money for social services.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- More Experience Section -->
-        <section class="grid lg:grid-cols-2 gap-8">
-            <!-- AKPsi -->
-            <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 space-y-6">
-                <div class="space-y-1">
-                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">Community</span>
-                    <h3 class="text-xl font-bold text-white">Alpha Kappa Psi</h3>
+        <!-- Surveys of Consumers -->
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-teal-500/10 text-teal-500 text-xs font-bold uppercase tracking-widest rounded-full border border-teal-500/20">Surveys of Consumers</span>
+                            <span class="text-slate-500 text-sm">2022 - 2023</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-teal-500 transition-colors">Student Clerk/Coder</h3>
+                    </div>
+                    <a href="http://www.sca.isr.umich.edu/" target="_blank" class="px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-teal-400 hover:text-teal-300 text-xs transition">Official Website</a>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Phi Chapter at U-M. A vital community of driven individuals that has shaped my professional development 
-                    and provided a supportive network of friends and mentors.
+                <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                    For about a year and a half, I worked as a student clerk/coder at the Surveys of Consumers within the Institute of Social Research at the University of Michigan. The Surveys of Consumers is a monthly survey that uses it's results to gauge economic sentiment in the country. I was in charge of helping with the transition of going from phone surveys to web surveys, as well as many administrative tasks. Just from doing my job, I was able to read how people from around the country percieve the current state of the economy, and I was fascinated by the variance and similarities in these responses. The team at the Surveys of Consumers is so awesome, and I was able to work with super kind and smart people while I worked there.
                 </p>
-                <div class="grid grid-cols-2 gap-2">
-                    <img src="{{url_for('static', filename='images/akpsi1.jpg')}}" alt="AKPsi" class="rounded-xl border border-white/5">
-                    <img src="{{url_for('static', filename='images/akpsi2.jpg')}}" alt="AKPsi Friends" class="rounded-xl border border-white/5">
-                </div>
             </div>
+        </article>
 
-            <!-- Students Against Racism -->
-            <div class="bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-3xl p-8 space-y-6">
-                <div class="space-y-1">
-                    <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest">Leadership</span>
-                    <h3 class="text-xl font-bold text-white">Students Against Racism</h3>
+        <!-- Alpha Kappa Psi -->
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-8">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-500 text-xs font-bold uppercase tracking-widest rounded-full border border-indigo-500/20">Alpha Kappa Psi - Phi Chapter</span>
+                            <span class="text-slate-500 text-sm">2021 - Present</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-500 transition-colors">Brother</h3>
+                    </div>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Co-founded to address systemic issues and implicit bias within my school district. 
-                    Developed educational lesson plans for elementary students and established a diversity hub.
-                </p>
-                <img src="{{url_for('static', filename='images/sar.jpg')}}" alt="SAR Team" class="w-full h-48 object-cover rounded-xl border border-white/5">
+
+                <div class="space-y-6">
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        Alpha Kappa Psi is a business fraternity and I joined the Umich chapter in my second semester freshman year. Now, I haven't held any board positions for the org (although I have helped with several comittees within the org), but I wanted to include this here because of how important this organization has been to my personal and professional development. There are so many incredible, intelligent, and interesting people in this org and just from hanging out with them I have learned so much. I have really been able to refine what I want to do professionally because of AKPsi, and have gotten so much help with my resume, interview skills, and overall industry knowledge. I think more importantly, because of this org, I am constantly surrounded by people doing crazy awesome things, whether it is starting their own startups, traveling around the world, or just simply following their passions, and it really motivates me to follow suit, or do my best to try to. Lastly, the community and friends this org has brought me is priceless, and I am so grateful to have joined!
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
+                            <img src="{{url_for('static', filename='images/akpsi1.jpg')}}" alt="AKPsi" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">A priceless community of friends and mentors.</p>
+                            </div>
+                        </div>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10">
+                            <img src="{{url_for('static', filename='images/akpsi2.jpg')}}" alt="AKPsi Friends" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                                <p class="text-xs text-white/70">Constantly motivated by people doing crazy awesome things.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </article>
+
+        <!-- Intus Care -->
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-500 text-xs font-bold uppercase tracking-widest rounded-full border border-cyan-500/20">Intus Care</span>
+                            <span class="text-slate-500 text-sm">Summer 2020</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-500 transition-colors">Research Intern</h3>
+                    </div>
+                    <a href="https://www.intuscare.com/" target="_blank" class="px-4 py-2 bg-white/5 rounded-xl border border-white/5 text-cyan-400 hover:text-cyan-300 text-xs transition">Official Website</a>
+                </div>
+                <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                    Intus Care is a health care analytics platform startup whose cofounder happened to have went to my high school. Back when they were super small, I was able to do some research within the long term health care space, and wrote reports to further refine their healthcare analytics platform. Since then, Intus Care has expanded, opening offices in New York, and raising a Series A.
+                </p>
+            </div>
+        </article>
+
+        <!-- Huron Valley PACE -->
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold uppercase tracking-widest rounded-full border border-green-500/20">Huron Valley PACE</span>
+                            <span class="text-slate-500 text-sm">Summer 2020</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-green-500 transition-colors">Volunteer Excel Instructor</h3>
+                    </div>
+                </div>
+                <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                    Huron Valley Pace is an all inclusive health care place for the elderly. I volunteered here actually to teach the employees basic and intermediate excel skills. I previously got Microsoft certified in Excel and Powerpoint, and also competed in excel competitions through Business Professionals of America, where I won 6th place at Nationals. I took up this opportunity as I thought it would be a good way to apply my excel knowledge, and was intruiged by the opportunity to learn how to teach and create my own course. After teaching weekly classes throughout the summer, I recieved lots of postitive feedback from the employees and also felt very personally accomplished. All my students were evidently older than me, so this was an interesting experience, but I really matured a lot, and was proud of myself for being able to stand up in front of a ton of educated adults and teach them the intracies of Excel!
+                </p>
+            </div>
+        </article>
+
+        <!-- Students Against Racism -->
+        <article class="group relative bg-[#3730a3]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20">
+            <div class="p-8 lg:p-10 space-y-8">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-bold uppercase tracking-widest rounded-full border border-emerald-500/20">Students Against Racism</span>
+                            <span class="text-slate-500 text-sm">2020 - 2021</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-emerald-500 transition-colors">Co-Founder</h3>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
+                        I went to a predominatley white high school, where microagressions and implicit biases were explicitly apparent. Specifically, during my Junior year, my school made national news twice for racist events. Now, I had certainly felt some level of racism throughout my time at Saline, but at this point I had felt enough was enough: I had to do something. With the help of 3 of my friends and my very knowledgeable AP Chem teacher, we started Students Against Racism. Our plan was to educate the youth in our school district about implicit biases and diverse perspectives so that the future of this school district would be in better hands. We spent hours as a club educating ourselves, and once we felt comfortable, we would create lesson plans and go into (or zoom into) elementary school classrooms to educate them. Additonally, we helped setup the diveristy hub in our high school, as well as create a mental health room in accordance with the Student Board for Diversity and Inclusion. This experience was pivotal as it showed me the power of standing up for what you believe in, and showed me how important taking that first step is in making a larger change. Additionally, I learned a lot from my AP Chem teacher who mentored us as we started this club, specifically about how to better keep an open mind. I am happy to say that this club is still running back in Saline as well!
+                    </p>
+                    
+                    <div class="relative aspect-video lg:h-[400px] rounded-2xl overflow-hidden border border-white/10">
+                        <img src="{{url_for('static', filename='images/sar.jpg')}}" alt="SAR Team" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-6">
+                            <p class="text-xs text-white/70">The club is still running back in Saline as well!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </div>
 </div>
-
-{% endblock %}
-
-
-    
 
 {% endblock %}
 

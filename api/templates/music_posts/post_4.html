@@ -1,33 +1,59 @@
 {% extends 'template.html' %}
 
 {% block content %}
-<div class="hidden xl:flex align-center items-center h-screen p-8 max-h-full max-w-full ">
-    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
-        <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996780759&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · <a href="https://soundcloud.com/ritom-sen/waltz-no-1" title="Waltz No. 1 (MUSESCORE VERSION)" target="_blank" style="color: #cccccc; text-decoration: none;">Waltz No. 1 (MUSESCORE VERSION)</a></div>
-        <div class=" border rounded-lg border-violet-500 border-4">
-            <embed src="{{url_for('static',filename='pdf/WaltzNo.1.pdf' )}}" type="application/pdf" height=800 width=1000>
+
+<div class="space-y-8">
+    <!-- Back Button -->
+    <a href="/music" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium">Back to Music</span>
+    </a>
+
+    <!-- Main Content Card -->
+    <article class="bg-[#4c1d95]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden">
+        <div class="p-8 lg:p-12 space-y-10">
+            <!-- Title Section -->
+            <header class="space-y-4">
+                <h1 class="text-4xl lg:text-5xl font-black text-white tracking-tight">Waltz No. 1</h1>
+                <div class="flex items-center space-x-4 text-slate-400">
+                    <span class="text-sm font-medium">Composition • 2024</span>
+                    <span class="h-1 w-1 bg-slate-700 rounded-full"></span>
+                    <span class="text-sm font-medium italic">Solo Piano</span>
+                </div>
+            </header>
+
+            <!-- Soundcloud Player -->
+            <div class="rounded-2xl overflow-hidden border border-white/5 bg-slate-950/50">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996780759&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
+
+            <!-- Sheet Music / PDF Section -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-white flex items-center">
+                    <svg class="mr-3 h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    Score & Sheet Music
+                </h3>
+
+                <!-- Desktop/Tablet View -->
+                <div class="hidden sm:block aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/10 bg-slate-950/30">
+                    <embed src="{{url_for('static', filename='pdf/WaltzNo.1.pdf')}}" type="application/pdf" class="w-full h-full">
+                </div>
+
+                <!-- Mobile View -->
+                <div class="sm:hidden p-8 text-center bg-white/5 rounded-2xl border border-white/5 space-y-4">
+                    <p class="text-slate-400 text-sm italic">PDF viewing is optimized for larger screens.</p>
+                    <a href="{{url_for('static', filename='pdf/WaltzNo.1.pdf')}}" target="_blank" 
+                       class="inline-block px-6 py-3 bg-red-600/10 text-red-500 rounded-xl font-bold text-sm border border-red-500/20">
+                        View Sheet Music PDF
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </article>
 </div>
 
-<div class="hidden xl:hidden sm:flex align-center items-center h-screen p-8 max-h-full max-w-full ">
-    <div class="overflow-y-auto max-h-full grid grid-cols-1 gap-4 ">
-        <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996780759&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · <a href="https://soundcloud.com/ritom-sen/waltz-no-1" title="Waltz No. 1 (MUSESCORE VERSION)" target="_blank" style="color: #cccccc; text-decoration: none;">Waltz No. 1 (MUSESCORE VERSION)</a></div>
-        <div class=" border rounded-lg border-violet-500 border-4">
-            <embed src="{{url_for('static',filename='pdf/WaltzNo.1.pdf' )}}" type="application/pdf" height=700 width=500 >
-        </div>
-    </div>
-    
-</div>
-<div class=" sm:hidden flex align-center items-center h-screen p-8 max-h-full max-w-full ">
-    <div class="max-h-full grid grid-cols-1 gap-4 ">
-        <p class="text-white">One more step, click below to read!</p>
-        <a href="{{url_for('static', filename='pdf/WaltzNo.1.pdf')}}"" target="_blank" class = "text-blue-300">Click to Open PDF</a>
-        <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1996780759&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ritom-sen" title="Ritom Sen" target="_blank" style="color: #cccccc; text-decoration: none;">Ritom Sen</a> · <a href="https://soundcloud.com/ritom-sen/waltz-no-1" title="Waltz No. 1 (MUSESCORE VERSION)" target="_blank" style="color: #cccccc; text-decoration: none;">Waltz No. 1 (MUSESCORE VERSION)</a></div>
-    </div>
-</div>
-<a href="/music" class="block flex flex-col bg-gray-800 text-gray-500 text-center p-4 mb-auto mr-2 ml-auto mt-2  rounded-md hover:bg-gradient-to-r hover:from-purple-700 hover:to-red-700">
-    <p class="text-white font-bold text-xs lg:text-base">&larr;</p>
-</a>
-                 
 {% endblock %}

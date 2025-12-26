@@ -34,3 +34,52 @@ function deleteText() {
 
 // Initial animation start
 animateText();
+
+// Red Balls Click Effect
+const mainCard = document.getElementById('main-card');
+
+if (mainCard) {
+    mainCard.addEventListener('click', (e) => {
+        const ballCount = 8;
+        for (let i = 0; i < ballCount; i++) {
+            createBall(e.clientX, e.clientY);
+        }
+    });
+}
+
+function createBall(x, y) {
+    const ball = document.createElement('div');
+    ball.className = 'click-ball';
+    document.body.appendChild(ball);
+
+    const size = Math.random() * 8 + 6;
+    ball.style.width = `${size}px`;
+    ball.style.height = `${size}px`;
+
+    const destinationX = (Math.random() - 0.5) * 300;
+    const destinationY = (Math.random() - 0.5) * 300;
+    const rotation = Math.random() * 360;
+    const delay = Math.random() * 0.2;
+
+    ball.style.left = `${x - size / 2}px`;
+    ball.style.top = `${y - size / 2}px`;
+
+    const animation = ball.animate([
+        { 
+            transform: 'translate(0, 0) scale(1)', 
+            opacity: 1 
+        },
+        { 
+            transform: `translate(${destinationX}px, ${destinationY}px) scale(0)`, 
+            opacity: 0 
+        }
+    ], {
+        duration: 800 + Math.random() * 400,
+        easing: 'cubic-bezier(0, .9, .57, 1)',
+        delay: delay * 1000
+    });
+
+    animation.onfinish = () => {
+        ball.remove();
+    };
+}
