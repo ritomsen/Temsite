@@ -21,3 +21,13 @@
 #main-card .relative.bg-slate-800\/60 {
     cursor: url('../images/cursor.png'), pointer;
 }
+
+::selection {
+    background: #dc2626;
+    color: white;
+}
+
+::-moz-selection {
+    background: #dc2626;
+    color: white;
+}

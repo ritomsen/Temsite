@@ -7,9 +7,20 @@
     <link href="{{url_for('static', filename='css/output.css')}}" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/Headshot.jpeg')}}">
 
+    <style>
+        ::selection {
+            background-color: #dc2626;
+            color: white;
+        }
+        ::-moz-selection {
+            background-color: #dc2626;
+            color: white;
+        }
+    </style>
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
-<body class="bg-[#050101] text-slate-200 min-h-screen flex flex-col lg:flex-row selection:bg-red-500/30">
+<body class="bg-[#050101] text-slate-200 min-h-screen flex flex-col lg:flex-row">
     <!-- Background Gradient Orbs -->
     <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
         <div class="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full bg-red-900/25 blur-[120px]"></div>

@@ -2223,20 +2223,19 @@ video {
   cursor: url('../images/cursor.png'), pointer;
 }
 
-.selection\:bg-red-500\/30 *::-moz-selection {
-  background-color: rgb(239 68 68 / 0.3);
+::-moz-selection {
+  background: #dc2626;
+  color: white;
 }
 
-.selection\:bg-red-500\/30 *::selection {
-  background-color: rgb(239 68 68 / 0.3);
+::selection {
+  background: #dc2626;
+  color: white;
 }
 
-.selection\:bg-red-500\/30::-moz-selection {
-  background-color: rgb(239 68 68 / 0.3);
-}
-
-.selection\:bg-red-500\/30::selection {
-  background-color: rgb(239 68 68 / 0.3);
+::-moz-selection {
+  background: #dc2626;
+  color: white;
 }
 
 .hover\:-translate-y-1:hover {
