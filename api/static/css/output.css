@@ -2416,23 +2416,19 @@ video {
   transition-duration: 700ms;
 }
 
-/* body {
-    cursor: url('../images/cursor.png'), auto;
-} */
-
-.click-ball {
+.music-note {
   position: fixed;
-  width: 12px;
-  height: 12px;
-  background-color: #ef4444;
-  border-radius: 50%;
   pointer-events: none;
   z-index: 100;
-  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
-}
-
-#main-card .relative.bg-slate-800\/60 {
-  cursor: url('../images/cursor.png'), pointer;
+  color: #ef4444;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
 }
 
 ::-moz-selection {
