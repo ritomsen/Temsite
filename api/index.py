@@ -93,6 +93,10 @@ def writing_post(postid):
 def music_post(postid):
     return flask.render_template(f"music_posts/post_{postid}.html")
 
+@app.route('/projects/<postid>/', methods=['GET'])
+def project_post(postid):
+    return flask.render_template(f"project_posts/post_{postid}.html")
+
 @app.route('/resume', methods=['GET'], endpoint='resume')
 def show_resume():
     return flask.render_template("resume.html")

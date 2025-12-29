@@ -12,129 +12,118 @@
     </header>
 
     <!-- Project Grid -->
-    <div class="grid grid-cols-1 gap-8">
-        <!-- GeminiScript Project -->
-        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
-            <div class="p-8 lg:p-10 space-y-6">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    <div class="space-y-1">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-red-500/10 text-red-500 text-xs font-bold uppercase tracking-widest rounded-full border border-red-500/20">Hackathon</span>
-                            <span class="text-slate-500 text-sm">2024</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-red-500 transition-colors">MHacks x Google AI Hackathon Project - GeminiScript</h3>
-                    </div>
-                    <a href="https://devpost.com/software/gemiscript-ai" target="_blank" 
-                       class="inline-flex items-center px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
-                        View on Devpost
-                        <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                    </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% set projects = [
+            {
+                'id': '2',
+                'title': 'Context-Aware Music Recommendation',
+                'category': 'Machine Learning',
+                'year': '2025',
+                'color': 'fuchsia',
+                'snippet': 'Algorithms that understand what song to play based on surroundings, weather, and audio.',
+                'tech': ['ML', 'RecSys', 'Tournament Sorting', 'Genetic Algorithms']
+            },
+            {
+                'id': '3',
+                'title': 'Samply',
+                'category': 'Web App',
+                'year': '2025',
+                'color': 'cyan',
+                'snippet': 'A web app that identifies samples within audio tracks automatically.',
+                'tech': ['Web Dev', 'Audio Processing']
+            },
+            {
+                'id': '4',
+                'title': 'Synesthesia',
+                'category': 'Web App',
+                'year': '2025',
+                'color': 'sky',
+                'snippet': "Generates music that specifically matches and accompanies an image's vibe.",
+                'tech': ['Generative AI', 'Computer Vision']
+            },
+            {
+                'id': '1',
+                'title': 'Recreating LlaVa for Emergency Landing Use Cases',
+                'category': 'Research',
+                'year': '2024',
+                'color': 'emerald',
+                'snippet': 'Recreated the "Visual Instruction Tuning" paper, training a Llama model for aerial image analysis.',
+                'tech': ['PyTorch', 'Llama', 'Computer Vision']
+            },
+            {
+                'id': '5',
+                'title': 'GeminiScript',
+                'category': 'Hackathon',
+                'year': '2024',
+                'color': 'red',
+                'snippet': 'Voice-controlled AI assistant for editing Google Docs using Gemini API.',
+                'tech': ['Python', 'AppScripts', 'Gemini']
+            },
+            {
+                'id': '6',
+                'title': 'cnct',
+                'category': 'Mobile App',
+                'year': '2024',
+                'color': 'purple',
+                'snippet': 'A birthday reminder app built with Flutter.',
+                'tech': ['Flutter', 'Dart', 'SQL', 'iOS']
+            },
+            {
+                'id': '7',
+                'title': 'TemSite',
+                'category': 'Web',
+                'year': '2024',
+                'color': 'indigo',
+                'snippet': 'My personal portfolio built with Flask and Tailwind to track my journey.',
+                'tech': ['Flask', 'Python', 'Tailwind']
+            }
+        ] %}
+
+        {% set color_map = {
+            'emerald': 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20 hover:border-emerald-500/50 hover:shadow-emerald-500/10 group-hover:text-emerald-400 text-emerald-500',
+            'fuchsia': 'bg-fuchsia-500/10 text-fuchsia-500 border-fuchsia-500/20 hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10 group-hover:text-fuchsia-400 text-fuchsia-500',
+            'cyan': 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-cyan-500/10 group-hover:text-cyan-400 text-cyan-500',
+            'sky': 'bg-sky-500/10 text-sky-500 border-sky-500/20 hover:border-sky-500/50 hover:shadow-sky-500/10 group-hover:text-sky-400 text-sky-500',
+            'red': 'bg-red-500/10 text-red-500 border-red-500/20 hover:border-red-500/50 hover:shadow-red-500/10 group-hover:text-red-400 text-red-500',
+            'purple': 'bg-purple-500/10 text-purple-500 border-purple-500/20 hover:border-purple-500/50 hover:shadow-purple-500/10 group-hover:text-purple-400 text-purple-500',
+            'indigo': 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20 hover:border-indigo-500/50 hover:shadow-indigo-500/10 group-hover:text-indigo-400 text-indigo-500'
+        } %}
+
+        {% for project in projects %}
+        {% set c = project.color %}
+        <a href="/projects/{{project.id}}" class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:bg-[#1e3a8a]/100 flex flex-col h-full hover:scale-[1.02] hover:shadow-2xl {{ 'hover:border-emerald-500/50 hover:shadow-emerald-500/10' if c == 'emerald' }} {{ 'hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10' if c == 'fuchsia' }} {{ 'hover:border-cyan-500/50 hover:shadow-cyan-500/10' if c == 'cyan' }} {{ 'hover:border-sky-500/50 hover:shadow-sky-500/10' if c == 'sky' }} {{ 'hover:border-red-500/50 hover:shadow-red-500/10' if c == 'red' }} {{ 'hover:border-purple-500/50 hover:shadow-purple-500/10' if c == 'purple' }} {{ 'hover:border-indigo-500/50 hover:shadow-indigo-500/10' if c == 'indigo' }}">
+            <div class="p-8 flex flex-col h-full space-y-5">
+                <div class="flex justify-between items-start">
+                    <span class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full border {{ 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' if c == 'emerald' }} {{ 'bg-fuchsia-500/10 text-fuchsia-500 border-fuchsia-500/20' if c == 'fuchsia' }} {{ 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20' if c == 'cyan' }} {{ 'bg-sky-500/10 text-sky-500 border-sky-500/20' if c == 'sky' }} {{ 'bg-red-500/10 text-red-500 border-red-500/20' if c == 'red' }} {{ 'bg-purple-500/10 text-purple-500 border-purple-500/20' if c == 'purple' }} {{ 'bg-indigo-500/10 text-indigo-500 border-indigo-500/20' if c == 'indigo' }}">
+                        {{project.category}}
+                    </span>
+                    <span class="text-slate-500 text-xs font-medium">{{project.year}}</span>
+                </div>
+                
+                <div class="flex-1 space-y-3">
+                    <h3 class="text-xl font-bold text-white transition-colors leading-tight {{ 'group-hover:text-emerald-400' if c == 'emerald' }} {{ 'group-hover:text-fuchsia-400' if c == 'fuchsia' }} {{ 'group-hover:text-cyan-400' if c == 'cyan' }} {{ 'group-hover:text-sky-400' if c == 'sky' }} {{ 'group-hover:text-red-400' if c == 'red' }} {{ 'group-hover:text-purple-400' if c == 'purple' }} {{ 'group-hover:text-indigo-400' if c == 'indigo' }}">
+                        {{project.title}}
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        {{project.snippet}}
+                    </p>
                 </div>
 
-                <div class="space-y-4">
-                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                        This paper is about how Spotify curates playlists for their users. This was a project that I created with 3 other teammates at the Mhacks x Google Hackathon. This was my first hackathon and I originally was going to do this solo, but I ended up hitting up a random girl (who seemed very experienced with hackathons) on slack and was able to join their team :). They already had this idea of essentially creating a google docs copilot that helped you use voice chat to link up with AI to edit and enhance your google doc. We used the Google Gemini API to connect to the LLM, and used python to link this with our AppScript, which edited the google doc. The point is that in the future, if we are using all this AR/VR stuff, then we won't be typing all that and would rather be using our voice, so this way we can make edits, fix errors, and create essays on google docs with just our voice. We didn't win anything but I was more than satisfied with my first hackathon experience. I met some super cool people from MSU and had a great time making a cool project. Check out the devpost to see the demo video!
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2">
-                        {% for tech in ['Python', 'AppScripts', 'Apple Vision Pro Simulator', 'Google Gemini'] %}
-                        <span class="px-3 py-1 bg-white/5 text-slate-400 text-xs rounded-lg border border-white/5">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
+                <div class="pt-4 flex flex-wrap gap-2">
+                    {% for t in project.tech %}
+                    <span class="px-2 py-0.5 bg-white/5 text-slate-500 text-[10px] rounded-lg border border-white/5">{{ t }}</span>
+                    {% endfor %}
+                </div>
+
+                <div class="pt-4 flex items-center text-xs font-bold uppercase tracking-widest {{ 'text-emerald-500' if c == 'emerald' }} {{ 'text-fuchsia-500' if c == 'fuchsia' }} {{ 'text-cyan-500' if c == 'cyan' }} {{ 'text-sky-500' if c == 'sky' }} {{ 'text-red-500' if c == 'red' }} {{ 'text-purple-500' if c == 'purple' }} {{ 'text-indigo-500' if c == 'indigo' }}">
+                    View Project
+                    <svg class="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </div>
             </div>
-        </article>
-
-        <!-- cnct Project -->
-        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
-            <div class="grid lg:grid-cols-2">
-                <div class="p-8 lg:p-10 space-y-6">
-                    <div class="space-y-1">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-purple-500/10 text-purple-500 text-xs font-bold uppercase tracking-widest rounded-full border border-purple-500/20">Mobile App</span>
-                            <span class="text-slate-500 text-sm">2024</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-purple-500 transition-colors">Birthday Reminder App "cnct" 🎂</h3>
-                    </div>
-
-                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                        One thing I love to do is say Happy Birthday to people, especially because I know how much I appreciate it when I get a good Happy Birthday text. Additionally, it helps you maintain friendships from people you may have not talked to for a long time. But, I frequently forget birthdays. I don't really like the way gcal does them because it is a grind to load them all on there, and I rarely look at the birthdays on snapchat (even tho it is surprisingly really good for that). So, I decided to create an app that reminds me of my friends birthdays. Introducing Cnct. I built this app using Flutter, and used a lot of the plugins that come with it. I used inpsiration from a flutter app I saw online called Chcklst as inspiration for the UI of the app. Some of the main features include: Importing your birthdays from your contacts, getting notifications on your birthday, being able to press a button and go straight to text message with a prefilled birthday message for that person's contact, insertion and deletion of birthdays, viewing birthdays today, within the next 2 weeks and per month, searching for poeple's birthdays by name. Overall, this was my first complete flutter app and it was fun to learn the framework, dart is like a combination of javascript, python, and c++ which I knew so it was intersting combining them. Additionally, it was really rewarding downloading the app on my phone and actually using what I had created :) Onto the next one.
-                    </p>
-
-                    <div class="flex flex-wrap gap-2">
-                        {% for tech in ['Flutter', 'Dart', 'SQL', 'iOS'] %}
-                        <span class="px-3 py-1 bg-white/5 text-slate-400 text-xs rounded-lg border border-white/5">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-
-                    <a href="https://github.com/ritomsen/cnct" target="_blank" 
-                       class="inline-flex items-center px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
-                        GitHub Repository
-                        <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                    </a>
-                </div>
-
-                <div class="bg-slate-950/40 p-8 lg:p-10 border-l border-white/5">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
-                            <img src="{{url_for('static', filename='images/cnct.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
-                                <p class="text-[10px] text-white/70">Modern UI inspired by Chcklst.</p>
-                            </div>
-                        </div>
-                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
-                            <img src="{{url_for('static', filename='images/cnct1.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
-                                <p class="text-[10px] text-white/70">Importing birthdays from your contacts.</p>
-                            </div>
-                        </div>
-                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
-                            <img src="{{url_for('static', filename='images/cnct_search.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
-                                <p class="text-[10px] text-white/70">Searching for birthdays by name.</p>
-                            </div>
-                        </div>
-                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 bg-slate-900 group-hover:border-white/20 transition">
-                            <img src="{{url_for('static', filename='images/cnct_slider.png')}}" alt="cnct screenshot" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent flex items-end p-4">
-                                <p class="text-[10px] text-white/70">Rewarding to use what I had created :)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Temsite Project -->
-        <article class="group relative bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden transition-all duration-300 hover:border-white/20 hover:shadow-2xl">
-            <div class="p-8 lg:p-10 space-y-6">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    <div class="space-y-1">
-                        <div class="flex items-center space-x-2">
-                            <span class="px-3 py-1 bg-indigo-500/10 text-indigo-500 text-xs font-bold uppercase tracking-widest rounded-full border border-indigo-500/20">Web Systems</span>
-                            <span class="text-slate-500 text-sm">2024</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white group-hover:text-indigo-500 transition-colors">This Website 🖥️</h3>
-                    </div>
-                    <a href="https://github.com/ritomsen/Temsite" target="_blank" 
-                       class="inline-flex items-center px-4 py-2 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
-                        GitHub Repository
-                    </a>
-                </div>
-
-                <div class="space-y-4">
-                    <p class="text-slate-300 leading-relaxed text-sm lg:text-base">
-                        This was the first completely personal project I set myself out to do. I used my EECS 485 skills (web systems) and whipped up something where I can put my life. This is especically helpful to keep track of some of the things I will be working on thorughout my gap. Stay tuned for more...
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-2">
-                        {% for tech in ['Flask', 'Python', 'Tailwind CSS', 'Vercel'] %}
-                        <span class="px-3 py-1 bg-white/5 text-slate-400 text-xs rounded-lg border border-white/5">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </article>
+        </a>
+        {% endfor %}
     </div>
 </div>
 

@@ -1,0 +1,69 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<div class="space-y-8 max-w-3xl mx-auto">
+    <!-- Back Button -->
+    <a href="/projects" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium text-sm lg:text-base">Back to Projects</span>
+    </a>
+
+    <!-- Project Card -->
+    <article class="bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-10 lg:p-16 space-y-10">
+            <!-- Header Section -->
+            <header class="space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="px-3 py-1 bg-sky-500/10 text-sky-500 text-xs font-bold uppercase tracking-widest rounded-full border border-sky-500/20">Web App</span>
+                            <span class="text-slate-500 text-sm">2025</span>
+                        </div>
+                        <h1 class="text-3xl lg:text-5xl font-black text-white tracking-tight leading-tight">Synesthesia</h1>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/ritomsen/synesthesia-frontend" target="_blank" 
+                           class="inline-flex items-center px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl text-xs font-bold transition border border-white/10">
+                            Frontend
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                        <a href="https://github.com/ritomsen/synthesia-backend" target="_blank" 
+                           class="inline-flex items-center px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl text-xs font-bold transition border border-white/10">
+                            Backend
+                            <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Project Description -->
+            <div class="space-y-8 text-slate-300">
+                <div class="prose prose-invert prose-sky max-w-none">
+                    <p class="text-lg leading-relaxed">
+                        A web app that generates music that specifically matches and accompanies an image's vibe
+                    </p>
+                </div>
+
+                <!-- Tech Stack Section -->
+                <div class="space-y-4 pt-6 border-t border-white/5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-[0.2em]">Technology Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {% for tech in ['Web Development', 'Generative AI', 'Computer Vision', 'Audio Synthesis', 'OpenAI DALL-E/GPT-4V'] %}
+                        <span class="px-4 py-2 bg-white/5 text-slate-400 text-sm rounded-xl border border-white/5">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Placeholder -->
+            <!-- <div class="bg-sky-500/5 rounded-2xl p-8 border border-sky-500/10 text-center">
+                <p class="text-sky-500/60 font-medium">Coming soon: Experience your images through sound!</p>
+            </div> -->
+        </div>
+    </article>
+</div>
+
+{% endblock %}

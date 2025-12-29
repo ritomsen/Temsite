@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<div class="space-y-8 max-w-3xl mx-auto">
+    <!-- Back Button -->
+    <a href="/writing" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium">Back to Writing</span>
+    </a>
+
+    <!-- Poem Card -->
+    <article class="bg-[#065f46]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-10 lg:p-16 space-y-12">
+            <!-- Header Section -->
+            <header class="space-y-2 border-b border-white/5 pb-8">
+                <h1 class="text-3xl lg:text-4xl font-black text-white tracking-tight">The Black Hole</h1>
+                <div class="flex items-center justify-between">
+                    <p class="text-slate-400 font-medium">by Ritom Sen</p>
+                    <span class="text-slate-600 text-sm">2025</span>
+                </div>
+            </header>
+
+            <!-- Poem Body -->
+            <div class="prose prose-invert prose-slate max-w-none">
+                <div class="space-y-8 text-slate-300 leading-relaxed text-lg italic font-serif">
+                    <p>It’s funny, I wouldn’t think you would step towards fear.<br>
+                    Wouldn’t think you would look into, well uncertainty, and look to get near.<br>
+                    It wasn’t the gravity that pulled you in;<br>
+                    In fact you looked to the warm light of your old star,<br>
+                    Hugged the familiarity goodbye and still jumped far.</p>
+
+                    <p>And although initially it led you to unfamiliarity,<br>
+                    You embraced it like your best friend.<br>
+                    Clutched onto it as if it gleamed luminously,<br>
+                    Even though it looked more like a dark end<br>
+                    Yet, it showed you that there was more to this journey you knew.</p>
+                    
+                    <p>At the point of no return, you found the cost deemed from a supernova<br>
+                    But now the power of the explosion was in you<br>
+                    You used this to adventure the variance;<br>
+                    Investigate the doubt;<br>
+                    Exchanged your curiosity for precariousness;<br>
+                    And after the universe calmed, you found a star brighter.</p>
+                    
+                    <p>A new system dawned from what once was nothing.<br>
+                    A light so radiant it beamed to your past world, and even showed them that you found something.</p>
+                    
+                    <p>Not only did you step towards fear;<br>
+                    You looked into the dark abyss of uncertainty,<br>
+                    Heard the wavering enigmatic echoes,<br>
+                    Reasoned against your thoughts of ambiguity,<br>
+                    And still decided to jump here.</p>
+                    
+                    <p>So when I see my black hole,<br>
+                    I don’t need to think about where I’ve been;<br>
+                    I don’t need to contemplate what’s within.<br>
+                    As because of you, I know that I’ll figure it all out after I jump in.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+{% endblock %}
+

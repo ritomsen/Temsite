@@ -1,0 +1,79 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<div class="space-y-8 max-w-5xl mx-auto">
+    <!-- Back Button -->
+    <a href="/projects" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium">Back to Projects</span>
+    </a>
+
+    <!-- Project Card -->
+    <article class="bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-8 lg:p-12 space-y-12">
+            <!-- Header Section -->
+            <header class="space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="px-3 py-1 bg-purple-500/10 text-purple-500 text-xs font-bold uppercase tracking-widest rounded-full border border-purple-500/20">Mobile App</span>
+                            <span class="text-slate-500 text-sm">2024</span>
+                        </div>
+                        <h1 class="text-3xl lg:text-5xl font-black text-white tracking-tight leading-tight">Birthday Reminder App "cnct" 🎂</h1>
+                    </div>
+                    <a href="https://github.com/ritomsen/cnct" target="_blank" 
+                       class="inline-flex items-center px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-medium transition border border-white/5">
+                        GitHub Repository
+                        <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </header>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Project Description -->
+                <div class="space-y-8 text-slate-300">
+                    <div class="prose prose-invert prose-purple max-w-none">
+                        <p class="text-lg leading-relaxed">
+                            One thing I love to do is say Happy Birthday to people, especially because I know how much I appreciate it when I get a good Happy Birthday text. Additionally, it helps you maintain friendships from people you may have not talked to for a long time. But, I frequently forget birthdays. I don't really like the way gcal does them because it is a grind to load them all on there, and I rarely look at the birthdays on snapchat (even tho it is surprisingly really good for that). So, I decided to create an app that reminds me of my friends birthdays. Introducing Cnct. I built this app using Flutter, and used a lot of the plugins that come with it. I used inpsiration from a flutter app I saw online called Chcklst as inspiration for the UI of the app. Some of the main features include: Importing your birthdays from your contacts, getting notifications on your birthday, being able to press a button and go straight to text message with a prefilled birthday message for that person's contact, insertion and deletion of birthdays, viewing birthdays today, within the next 2 weeks and per month, searching for poeple's birthdays by name. Overall, this was my first complete flutter app and it was fun to learn the framework, dart is like a combination of javascript, python, and c++ which I knew so it was intersting combining them. Additionally, it was really rewarding downloading the app on my phone and actually using what I had created :) Onto the next one.
+                        </p>
+                    </div>
+
+                    <!-- Tech Stack Section -->
+                    <div class="space-y-4 pt-6 border-t border-white/5">
+                        <h3 class="text-sm font-bold text-white uppercase tracking-[0.2em]">Technology Stack</h3>
+                        <div class="flex flex-wrap gap-2">
+                            {% for tech in ['Flutter', 'Dart', 'SQL', 'iOS Development'] %}
+                            <span class="px-4 py-2 bg-white/5 text-slate-400 text-sm rounded-xl border border-white/5">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Screenshots Grid -->
+                <div class="bg-slate-950/40 p-6 rounded-3xl border border-white/5">
+                    <div class="grid grid-cols-2 gap-4">
+                        {% set screenshots = [
+                            ('cnct.png', 'Modern UI inspired by Chcklst'),
+                            ('cnct1.png', 'Contact Import View'),
+                            ('cnct_search.png', 'Search Functionality'),
+                            ('cnct_slider.png', 'Upcoming Birthdays')
+                        ] %}
+                        {% for img, caption in screenshots %}
+                        <div class="relative aspect-[9/16] rounded-xl overflow-hidden border border-white/10 group/img shadow-2xl">
+                            <img src="{{url_for('static', filename='images/' + img)}}" alt="cnct screenshot" class="w-full h-full object-cover transition duration-500 group-hover/img:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-4 opacity-0 group-hover/img:opacity-100 transition-opacity">
+                                <p class="text-[10px] text-white/90 leading-tight">{{ caption }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+{% endblock %}

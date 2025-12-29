@@ -1,0 +1,93 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+<div class="space-y-8 max-w-3xl mx-auto">
+    <!-- Back Button -->
+    <a href="/projects" class="group inline-flex items-center space-x-2 text-slate-500 hover:text-white transition">
+        <svg class="h-5 w-5 transform group-hover:-translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        <span class="font-medium text-sm lg:text-base">Back to Projects</span>
+    </a>
+
+    <!-- Project Card -->
+    <article class="bg-[#1e3a8a]/90 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div class="p-10 lg:p-16 space-y-10">
+            <!-- Header Section -->
+            <header class="space-y-6">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="px-3 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-bold uppercase tracking-widest rounded-full border border-emerald-500/20">Research</span>
+                    <span class="text-slate-500 text-sm">2024</span>
+                </div>
+                <h1 class="text-3xl lg:text-5xl font-black text-white tracking-tight leading-tight">Recreating LlaVa for Emergency Landing Use Cases</h1>
+            </header>
+
+            <!-- Project Description -->
+            <div class="space-y-8 text-slate-300">
+                <div class="prose prose-invert prose-emerald max-w-none">
+                    <p class="text-lg leading-relaxed">
+                        Recreated the "Visual Instruction Tuning" paper which involved coding from scratch and training a Llama model and visual encoder using Umich GPUs and using GPT-4o to evaluate our Llava implementation using the COCO and Skyview datasets to determine LLaVa’s ability to identify emergency landing spots from aerial images.
+                    </p>
+                </div>
+
+                <!-- Tech Stack Section -->
+                <div class="space-y-4 pt-6 border-t border-white/5">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-[0.2em]">Technology Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {% for tech in ['PyTorch', 'Llama', 'Computer Vision', 'GPU Computing', 'GPT-4o API', 'COCO Dataset', 'Skyview Dataset'] %}
+                        <span class="px-4 py-2 bg-white/5 text-slate-400 text-sm rounded-xl border border-white/5">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF Report Section -->
+            <div class="space-y-6 pt-10 border-t border-white/5">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-[0.2em]">Research Report</h3>
+                    <a href="{{url_for('static', filename='pdf/llava_report.pdf')}}" 
+                       target="_blank"
+                       class="text-xs font-bold text-emerald-500 hover:text-emerald-400 transition uppercase tracking-widest flex items-center">
+                        View Full PDF
+                        <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+                    <div class="relative bg-slate-950/40 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                        <!-- Desktop/Tablet View -->
+                        <div class="hidden sm:block w-full h-[800px]">
+                            <embed src="{{url_for('static', filename='pdf/llava_report.pdf')}}" 
+                                   type="application/pdf" 
+                                   class="w-full h-full">
+                        </div>
+
+                        <!-- Mobile View -->
+                        <div class="sm:hidden p-10 text-center space-y-6">
+                            <div class="bg-emerald-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto border border-emerald-500/20">
+                                <svg class="h-8 w-8 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-white font-bold text-lg">Read the Report</p>
+                                <p class="text-slate-400 text-sm leading-relaxed">PDF preview is limited on mobile devices. Click below to view the full research report.</p>
+                            </div>
+                            <a href="{{url_for('static', filename='pdf/llava_report.pdf')}}" 
+                               target="_blank"
+                               class="inline-flex items-center justify-center px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold transition-all shadow-lg shadow-emerald-600/20 w-full">
+                                Open PDF Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+{% endblock %}

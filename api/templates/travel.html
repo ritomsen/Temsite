@@ -3,27 +3,94 @@
 
 {% block content %}
 
-<div class="min-h-[60vh] flex flex-col items-center justify-center space-y-8">
-    <div class="relative">
-        <div class="absolute -inset-4 bg-red-500/20 rounded-full blur-2xl animate-pulse"></div>
-        <svg class="relative h-24 w-24 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-    </div>
-    
-    <div class="text-center space-y-4">
-        <h2 class="text-3xl lg:text-5xl font-black text-white tracking-tight">Travel Tracker</h2>
-        <div class="h-8">
-            <div id="animated-text" class="text-slate-400 font-medium tracking-widest uppercase text-sm"></div>
-        </div>
+<div class="min-h-screen flex flex-col items-center pt-24 pb-12 px-4">
+    <div class="text-center space-y-4 mb-8">
+        <h2 class="text-4xl lg:text-6xl font-black text-white tracking-tight">Travel Tracker</h2>
+        <p class="text-slate-400 font-medium tracking-widest uppercase text-sm">Mapping my adventures around the world</p>
     </div>
 
-    <div class="max-w-md bg-[#0c4a6e]/90 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center">
-        <p class="text-slate-400 text-sm leading-relaxed">
-            I'm currently mapping out my adventures.
-        </p>
+    <style>
+        .stars-background {
+            background-color: #000;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 160px 120px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: stars-move 100s linear infinite;
+        }
+
+        @keyframes stars-move {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        /* Atmospheric glow for the globe */
+        .globe-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+    </style>
+
+    <div class="w-full max-w-6xl h-[600px] bg-black border border-white/10 rounded-3xl overflow-hidden relative shadow-2xl stars-background">
+        <div class="globe-glow"></div>
+        <div id="chartdiv" class="w-full h-full relative z-10" style="height: 600px; background: transparent;"></div>
+        
+        <!-- Info Panel (Desktop) / Modal (Mobile) -->
+        <div id="info-panel" class="hidden absolute top-6 right-6 w-80 bg-slate-900/90 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl transform transition-all duration-300 translate-x-full opacity-0 z-50">
+            <button id="close-panel" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div id="info-content" class="space-y-4">
+                <h3 id="location-name" class="text-2xl font-bold text-white"></h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-sky-400 mb-2">Things I Did</h4>
+                        <ul id="things-done" class="list-disc list-inside text-slate-300 text-sm space-y-1"></ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-rose-400 mb-2">Favorite Part</h4>
+                        <p id="favorite-part" class="text-slate-300 text-sm italic"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions Overlay -->
+        <div id="map-instructions" class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 pointer-events-none transition-opacity duration-500 z-50">
+            <p class="text-slate-400 text-xs font-medium">Click on a highlighted area to see more • Use your mouse to rotate the globe</p>
+        </div>
+
+        <!-- Back Button (for USA drill-down) -->
+        <button id="back-to-world" class="hidden absolute top-6 left-6 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 px-4 py-2 rounded-xl text-white text-sm font-medium transition-all flex items-center gap-2 z-50">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to World
+        </button>
     </div>
 </div>
+
+<!-- amCharts 5 Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 <script src="{{url_for('static', filename='js/travel.js')}}"></script>
 
